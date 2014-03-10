@@ -3,15 +3,12 @@
  * Created by JetBrains PhpStorm.
  * User: adam
  * Date: 3/9/14
- * Time: 9:14 PM
+ * Time: 9:24 PM
  * To change this template use File | Settings | File Templates.
  */
 
-class UsersController extends AppController {
+class User extends AppModel {
 
-    var $scaffold = 'admin';
+    public $hasMany = 'Post';
 
-    public function index() {
-
-    }
 }
