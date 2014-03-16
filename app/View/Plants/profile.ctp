@@ -2,8 +2,8 @@
 
 <h2>
     Dashboard: <?php echo $data['Plant']['short_name'] ?>
-    <small>
-        <?php echo $data['Plant']['description']; ?>
+    <small>(
+        <?php echo $data['Plant']['description']; ?>)
     </small>
 </h2>
 

@@ -15,4 +15,18 @@ class UnitsController extends AppController {
     public function index() {
 
     }
+
+    public function profile($id = NULL) {
+
+        // Logic - only a user with this refinery can see equipment profiles
+
+        $params = array(
+            'conditions' => array(
+                'Unit.id' => $id,
+            )
+        );
+
+        $this->set('data', $this->Unit->find('first', $params));
+
+    } # End of method profile
 }

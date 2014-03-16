@@ -9,7 +9,8 @@
 
 class Unit extends AppModel {
 
-    public $belongsTo = 'Plant';
+    public $belongsTo = array(
+        'Plant', 'UnitType');
     public $hasMany = 'Equipment';
 
 }
