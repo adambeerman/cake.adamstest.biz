@@ -1,6 +1,19 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <h1>Blog posts</h1>
 
+This user id is: <?php echo AuthComponent::user('id'); ?>
+<br>
+
+<h2>Links</h2>
+<br>
+
+<a href = '/users'>Users</a><br>
+<a href = '/equipment'>Equipment</a><br>
+<a href = '/plants'>Plants</a><br>
+<a href = '/businessunits'>Business Units</a><br>
+
+
+
 <?php echo $this->Html->link(
     'Add Post',
     array('controller' => 'posts', 'action' => 'add')
