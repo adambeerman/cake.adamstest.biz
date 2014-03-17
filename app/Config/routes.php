@@ -29,7 +29,7 @@
 #	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
 /* This will connect visitors to the site to the post index page) */
-    Router::connect('/', array('controller'=>'pages', 'action' => 'display'));
+    Router::connect('/', array('controller'=>'users', 'action' => 'profile'));
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.

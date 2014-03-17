@@ -12,5 +12,6 @@ class Unit extends AppModel {
     public $belongsTo = array(
         'Plant', 'UnitType');
     public $hasMany = 'Equipment';
+    public $recursive = 2;
 
 }

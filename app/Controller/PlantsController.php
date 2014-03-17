@@ -22,10 +22,20 @@ class PlantsController extends AppController {
         $params = array(
             'conditions' => array(
                 'Plant.id' => $id,
-            )
+            ),
         );
 
         $this->set('data', $this->Plant->find('first',$params));
+
+
+        $params2 = array(
+            'conditions' => array(
+
+            )
+        );
+        $this->loadModel('UnitType');
+        $this->set('units', $this->UnitType->find('first'));
+
 
     } # End profile method
 }

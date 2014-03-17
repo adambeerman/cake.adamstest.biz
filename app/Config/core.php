@@ -19,6 +19,16 @@
  */
 
 /**
+ * App Name / Logo / Tagline
+ *
+ *
+ */
+
+define('APP_NAME', 'PlantPal');
+define('APP_TAGLINE', 'Here for you');
+
+
+/**
  * CakePHP Debug Level:
  *
  * Production Mode:

@@ -4,3 +4,19 @@
     max-width: 100px;
     max-height: 100px;
 }
+
+#header a{
+    float: left;
+}
+#header ul {
+    position: relative;
+    float: left;
+    display: inline;
+
+}
+
+#header ul li {
+    list-style: none;
+    float: left;
+    position:relative;
+}

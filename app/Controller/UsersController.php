@@ -17,12 +17,12 @@ class UsersController extends AppController {
     public $scaffold = 'admin';
 	public $components = array('Paginator', 'Session');
 
-    /*public function beforeFilter() {
+    public function beforeFilter() {
         parent::beforeFilter();
 
-        // This sets what pages the logged in user is allowed to view
-        $this->Auth->allow('add','logout','profile');
-    }*/
+        // This sets what pages the logged logged out user is allowed to view
+        $this->Auth->allow('add','login');
+    }
 
 
     /**
