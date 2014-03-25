@@ -13,6 +13,14 @@ class User extends AppModel {
  */
 	public $useDbConfig = 'test';
 
+    public $hasMany = array(
+        'Turnover'
+    );
+
+    public $belongsTo = array(
+        'Company', 'BusinessUnit', 'Refinery'
+    );
+
     public $hasAndBelongsToMany = array(
         'Plant' =>
         array(
@@ -112,4 +120,5 @@ class User extends AppModel {
         }
         return true;
     }
+
 }

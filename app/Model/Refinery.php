@@ -10,6 +10,6 @@
 class Refinery extends AppModel {
 
     public $belongsTo = 'Company';
-    public $hasMany = 'BusinessUnit';
+    public $hasMany = array('BusinessUnit','TurnoverGroup','User');
 
 }

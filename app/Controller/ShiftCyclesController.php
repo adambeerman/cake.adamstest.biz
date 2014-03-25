@@ -8,6 +8,7 @@ App::uses('AppController', 'Controller');
  */
 class ShiftCyclesController extends AppController {
 
+    public $scaffold = 'admin';
 /**
  * Components
  *

@@ -95,4 +95,9 @@ class Turnover extends AppModel {
 			'order' => ''
 		)
 	);
+
+    //Copying this function from the example provided for posts in CakePHP.
+    public function isOwnedBy($post, $user) {
+        return $this->field('id', array('id' => $post, 'user_id' => $user)) === $post;
+    }
 }

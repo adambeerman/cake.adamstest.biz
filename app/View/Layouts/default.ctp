@@ -29,12 +29,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-        echo $this->Html->css('main');
+		echo $this->Html->css(array('cake.generic','main'));
+        //echo $this->Html->css('main');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+
+        echo $this->Html->script('jquery');
 	?>
 </head>
 <body>
@@ -46,6 +48,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 <ul>
                     <li>
                         <?php echo $this->Html->link('Logout','/users/logout'); ?>
+                    </li>
+                    <li>
+                        <?php echo AuthComponent::user('id'); ?>
                     </li>
                 </ul>
             <?php else: ?>
@@ -64,7 +69,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 			<?php echo $this->Session->flash(); ?>
 
-			<?php echo $this->fetch('content'); ?>
+            <?php echo $this->fetch('content'); ?>
 		</div>
 
 		<div id="footer">
@@ -77,5 +82,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+    <?php echo $this->Js->writeBuffer(); ?>
 </body>
 </html>

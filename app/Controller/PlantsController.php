@@ -38,4 +38,5 @@ class PlantsController extends AppController {
 
 
     } # End profile method
+
 }

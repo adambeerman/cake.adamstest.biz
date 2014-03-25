@@ -3,15 +3,19 @@
 	<fieldset>
 		<legend><?php echo __('Edit Turnover'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+
+        # Only need to modify the name and/or content
+		echo $this->Form->hidden('id');
 		echo $this->Form->input('name');
-		echo $this->Form->input('turnover_group_id');
-		echo $this->Form->input('user_id');
+		echo $this->Form->hidden('turnover_group_id');
+		echo $this->Form->hidden('user_id');
 		echo $this->Form->input('content');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
+
+<!--
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
@@ -24,3 +28,4 @@
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+-->

@@ -11,4 +11,6 @@ class Company extends AppModel {
 
     public $hasMany = 'Refinery';
 
+    public $displayField = 'name';
+
 }

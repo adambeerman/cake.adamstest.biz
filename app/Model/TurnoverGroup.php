@@ -40,6 +40,8 @@ class TurnoverGroup extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+
+        'business_unit_id' =>array(),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -91,7 +93,11 @@ class TurnoverGroup extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
+		),
+        'TurnoverIndex' => array(
+            'className' => 'TurnoverIndex',
+            'foreignKey' => 'turnover_index_id',
+        )
 	);
 
 }

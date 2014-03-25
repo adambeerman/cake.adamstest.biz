@@ -8,6 +8,7 @@ App::uses('AppController', 'Controller');
  */
 class TurnoversController extends AppController {
 
+    public $scaffold = 'admin';
 /**
  * Components
  *
@@ -74,7 +75,8 @@ class TurnoversController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Turnover->save($this->request->data)) {
 				$this->Session->setFlash(__('The turnover has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect('/turnover_groups/view/'.$this->request->data['Turnover']['turnover_group_id']);
+                //return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The turnover could not be saved. Please, try again.'));
 			}

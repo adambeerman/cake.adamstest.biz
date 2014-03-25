@@ -12,7 +12,7 @@ class BusinessUnit extends AppModel {
     var $name = 'BusinessUnit';
     var $displayField = 'short_name';
 
-    public $hasMany = 'Plant';
+    public $hasMany = array('Plant', 'TurnoverGroup');
     public $belongsTo = 'Refinery';
 
 }

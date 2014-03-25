@@ -3,13 +3,17 @@
 	<fieldset>
 		<legend><?php echo __('Edit User'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('first_name');
-		echo $this->Form->input('last_name');
-		echo $this->Form->input('email');
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('role');
+		//echo $this->Form->input('id');
+		//echo $this->Form->input('first_name');
+		//echo $this->Form->input('last_name');
+		//echo $this->Form->input('email');
+		//echo $this->Form->input('username');
+		//echo $this->Form->input('password');
+		//echo $this->Form->input('role');
+
+        echo $this->Form->input('companies');
+        echo $this->Form->input('businessUnits', array('multiple' => true));
+        echo $this->Form->input('plants', array('multiple' => true));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

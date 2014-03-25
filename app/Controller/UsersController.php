@@ -16,13 +16,16 @@ class UsersController extends AppController {
  */
     public $scaffold = 'admin';
 	public $components = array('Paginator', 'Session');
+    public $helpers = array('Html', 'Js'); //array('Js' => array('Jquery', 'j_users_add')));
 
     public function beforeFilter() {
         parent::beforeFilter();
 
-        // This sets what pages the logged logged out user is allowed to view
-        $this->Auth->allow('add','login');
+        // This sets what pages the  logged out user is allowed to view
+        $this->Auth->allow('add', 'logout');
     }
+
+
 
 
     /**
@@ -32,7 +35,11 @@ class UsersController extends AppController {
  */
 	public function index() {
 		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
+		try {
+            $this->set('users', $this->Paginator->paginate());
+        } catch (NotFoundException $e) {
+            $this->request->params['paging'];
+        }
 	}
 
 /**
@@ -44,7 +51,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
         $this->User->id = $id;
-		if (!$this->User->exists($id)) {
+		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -60,15 +67,33 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+
+            // Determine the company based on the e-mail address
+
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
+				$this->Session->setFlash(__('User has been added..'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(
+                    __('The user could not be saved. Please, try again.')
+                );
 			}
+
+            //Ideally, I will be able to have a person choose their company name
+            // THEN, upon receiving confirmation e-mail, they will get to choose their Refinery, Business Unit, and Plants.
+
+            $companies = $this->User->Company->find('list');
+            $businessUnits = $this->User->BusinessUnit->find('list');
+            $refineries = $this->User->Refinery->find('list');
+            $plants = $this->User->Plant->find('list');
+            $this->set(compact('companies', 'businessUnits', 'refineries', 'plants'));
 		}
 	}
+
+    public function validate_email($suffix = null) {
+        $this->autoRender = false;
+    }
 
 /**
  * edit method
@@ -78,14 +103,21 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		$this->User->id = $id;
+		//$this->User->id = $id;
+
+        if(!$id) {
+            throw new NotFoundException(__('Invalid User'));
+        }
+
+        //$user = $this->User->findById($id);
+
         if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'edit'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
@@ -93,7 +125,17 @@ class UsersController extends AppController {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
-	}
+
+        // Cake Bake would normally generate these
+        // They hae to do with the HABTM relationship
+
+        // Need to set up logic so that the company is automatically chosen based on the email suffix.
+        $companies = $this->User->Company->find('list');
+        $businessUnits = $this->User->BusinessUnit->find('list');
+        $plants = $this->User->Plant->find('list');
+        $this->set(compact('companies', 'businessUnits', 'plants'));
+
+    }
 
 /**
  * delete method
@@ -139,19 +181,101 @@ class UsersController extends AppController {
         return $this->redirect($this->Auth->logout());
     }
 
-    public function profile() {
+    public function profile($id = null) {
         /*if(!$this->User->exists()) {
             throw new notFoundException(__('Invalid user'));
         }*/
 
-    $params = array(
-        'conditions' => array(
-            'User.id' => $this->Auth->user('id')
-        )
-    );
+        //Gather User Information
+        $user = $this->User->findById($this->Auth->user('id'));
+        $this->set('userData', $user);
+        $this->set('title_for_layout', "USER TITLE");
+        // If a user is new, and has "0" for their company, refinery, and plants, we need to go through a welcome process
 
+        /*
+         * If a user does not have a company_id yet, we need to initiate that right away
+        if($user['company_id']==0) {
+            return $this->redirect(array('action'=>'profile_setup',$user['id']));
+        }
+
+        */
+
+        // Handle an ajax request
+        if($this->request->is('ajax')) {
+            //$variable = 3;
+
+            $businessUnitInfo = $this->User->Plant->BusinessUnit->find('first', array('recursive' =>  0));
+
+            $params = array('conditions' => array('Plant.business_unit_id' =>  $businessUnitInfo['BusinessUnit']['id']));
+            $plants = $this->User->Plant->find('list',$params);
+            $this->set(compact('plants'));
+            $this->request->data = $user;
+
+            //$this->set('content', $variable);
+            $this->render('ajax_profile', 'ajax');
+        }
+
+        $params = array(
+            'conditions' => array(
+                'User.id' => $this->Auth->user('id')
+            ),
+            'recursive' => 3,
+        );
         $this->set('data',$this->User->find('first',$params));
+
+        $paramsTOs = array(
+            'conditions' => array(
+                'Turnover.user_id' => $this->Auth->user('id')
+            ),
+            'order' => array(
+                'Turnover.created' => 'DESC'
+            ),
+            'limit' => 10,
+        );
+        $this->set('refineryInfo',$this->User->Plant->BusinessUnit->Refinery->find('first', array('recursive' =>  0)));
+        $this->set('userTOs', $this->User->Turnover->find('all', $paramsTOs));
+        //$this->loadModel('TurnoverGroup');
+
+        //Find the turnover group id's that this belongs to. :
+
 
 
     }
+
+    public function plant_edit($id = null) {
+        //This function provides user a lists of plants available to them to add/remove from profile
+
+        if(!$id) {
+            throw new NotFoundException(__('Invalid id'));
+        }
+
+        // Select the user from the id supplied
+
+        $user = $this->User->findById($id);
+        if(!$user) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+
+        if($this->request->is(array('post','put'))) {
+            $this->User->id = $id;
+            if($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('Plant info has been saved'));
+                return $this->redirect(array('action'=>'profile'));
+            }
+            $this->Session->setFlash(__('Unable to update user'));
+        }
+
+        if(!$this->request->data) {
+
+            // Find which business unit the User is a part of and only display those plants
+            $businessUnitInfo = $this->User->Plant->BusinessUnit->find('first', array('recursive' =>  0));
+
+            $params = array('conditions' => array('Plant.business_unit_id' =>  $businessUnitInfo['BusinessUnit']['id']));
+            $plants = $this->User->Plant->find('list',$params);
+            $this->set(compact('plants'));
+            $this->request->data = $user;
+        }
+    }
+
+
 }

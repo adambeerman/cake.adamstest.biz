@@ -41,8 +41,7 @@ class AppController extends Controller {
             ),
             'logoutRedirect' => array(
                 'controller' => 'users',
-                'action' => 'login',
-                'home'
+                'action' => 'login'
             ),
             'authorize' => array('Controller') //  New Line added
         )
@@ -50,16 +49,22 @@ class AppController extends Controller {
 
     public function isAuthorized($user) {
         //Admin can access every action
-        if(isset($user['role']) && $user['role']=='admin'){
+
+        /*if(isset($user['role']) && $user['role']=='admin'){
             return true;
-        }
+        }*/
+
+        //Temporarily returning true for everyone
+        return true;
 
         //Default Deny
         return false;
     }
 
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
+        //$this->Auth->allow('index', 'view');
+        //$this->Auth->allow('add', 'logout');
+        //$this->Auth->allow('index', 'view');
     }
 }
 

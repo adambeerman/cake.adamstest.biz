@@ -20,3 +20,23 @@
     float: left;
     position:relative;
 }
+
+#company_logo {
+    display: none;
+}
+
+.modify {
+    opacity: .5;
+    text-decoration: none;
+}
+
+.turnover {
+    /*border: 1px solid black;*/
+    width: 40%;
+    clear: left;
+}
+
+#turnover_prev, #turnover_cur, #turnover_next {
+    float: left;
+    padding: 15px;
+}
