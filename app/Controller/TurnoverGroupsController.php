@@ -68,6 +68,9 @@ class TurnoverGroupsController extends AppController {
  */
 	public function view($id = null, $idx = null) {
 
+        // $id is the turnover_group_id
+        // $idx is the integer index, essentially a count up from the starting set
+
         /* Turnover Group View
 
         User will have navigated here from an index page, containing the group id
@@ -88,63 +91,39 @@ class TurnoverGroupsController extends AppController {
 		}
 
         //Current Time
-        $currentTime = time();
-        $this->set('currentTime', $currentTime);
+        $this->set('currentTime', time());
 
-        //Number of shifts - what if this is not a number?
         $numShifts = $this->TurnoverGroup->ShiftCycle->field('num_shifts');
 
-        $step = 24*60*60/$numShifts;
-
-
-
-        // Pull in the general shift times, and then concatenate them with $midnight variable
-        $i = 1;
-        while ($i <= $numShifts) {
-            $startTime[$i] = $this->TurnoverGroup->ShiftCycle->field('shift_start_'.$i);
-
-            //Instead of creating a midnight tag, we'll use current date + shift time
-            $shiftStartTime = date('Y-m-d',$currentTime).' '.$startTime[$i];
-
-            //Currently, using CakeTime::serverOffset() to determine shift times from gmt
-            // This will eventually [NEED TO] be updated with the time zone for the user group
-            $shiftStart[$i] = CakeTime::toUnix($shiftStartTime, 'America/New_York');
-            $i++;
-        }
-        // $startTime is array of starting shifts.
+        // Find & Set shift start times
+        $shiftStart = $this->TurnoverGroup->get_shift_starts($id, $numShifts);
         $this->set('startTimes',$shiftStart);
 
-        // Determine if we are on the previous night shift, the current day shift or current night shift
-        // Initially, assuming we only have 2 shifts. [NEED TO] expand to accomodate other shift types
-        $j = 1;
-
-        if($currentTime < $shiftStart[$j]) {
-
-            // Display "Night Shift" plus the previous day's date
-            $shift = "Night Shift - ".date('m/d/y', $currentTime-60*60*24);
-            $start = $shiftStart[$j] - 60*60*24/$numShifts;
-
-            $search = '(created BETWEEN '.$start.' AND '.$shiftStart[$j].');';
-        }
-        elseif($currentTime<$shiftStart[$j+1]){
-            $shift = "Day Shift - ".date('m/d/y', $currentTime);
-            $search = '(created BETWEEN '.$shiftStart[$j].' AND '.$shiftStart[$j+1].');';
+        // Find & Set shift labels for Turnover Group View page
+        // [NEED TO] if the $idx has been specified, need to find the new shift name
+        if(!isset($idx)){
+            $shiftLabel = $this->TurnoverGroup->get_shift_label($shiftStart);
         }
         else {
-            $shift = "Night Shift - ".date('m/d/y', $currentTime);
-            $search = 'created > '.$shiftStart[$j+1].';';
+            $shiftLabel = "need to program the shift label";
         }
 
-        $this->set('shift', $shift);
+        $this->set('shift', $shiftLabel);
 
-        //Query the database:
+        // If an index is provided, use it. Otherwise, find what the current index is
+        if(!isset($idx)){
+            $idx = $this->TurnoverGroup->Turnover->set_turnover_idx();
+        }
+
+        //Pass index to view for creating new links
+        $this->set('idx',$idx);
 
         $turnovers = $this->TurnoverGroup->Turnover->query(
-            'SELECT * FROM turnovers AS Turnover WHERE Turnover.turnover_group_id = '.$id. ' AND '.$search.' created DESC'
-        );
+            'SELECT * FROM turnovers AS Turnover WHERE Turnover.turnover_group_id = '.$id.' AND
+                Turnover.turnover_idx = '.$idx.';');
 
-        // Find all the turnovers for the current shift
-        $this->set('turnovers', $turnovers); //$this->TurnoverGroup->Turnover->find('all', $params));
+        $this->set('turnovers', $turnovers);
+
         $options = array('conditions' => array('TurnoverGroup.id' => $id),
             'recursive' => -1);
         $this->set('turnoverGroup', $this->TurnoverGroup->find('first', $options));

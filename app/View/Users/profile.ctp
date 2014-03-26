@@ -71,7 +71,7 @@
         echo $this->Time->format($turnover['Turnover']['created'], '%m/%d')." - ".
         $this->Html->link($turnover['Turnover']['name'],
             array('controller' => 'turnover_groups', 'action' => 'view',
-                $turnover['Turnover']['turnover_group_id']));
+                $turnover['Turnover']['turnover_group_id'],$turnover['Turnover']['turnover_idx']));
     echo "<br>";
     }
     ?>

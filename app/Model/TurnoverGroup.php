@@ -94,10 +94,41 @@ class TurnoverGroup extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-        'TurnoverIndex' => array(
-            'className' => 'TurnoverIndex',
-            'foreignKey' => 'turnover_index_id',
-        )
 	);
+
+
+    public function get_shift_starts($id = null, $numShifts = null) {
+        # Returns an array of shift starting times
+        for($i = 1; $i <= $numShifts; $i++) {
+            $startTime[$i] = $this->ShiftCycle->field('shift_start_'.$i);
+
+            //Concatenate today's date with the shift start
+            $shiftStartTime = date('Y-m-d',time()).' '.$startTime[$i];
+
+            // This will eventually [NEED TO] be updated with the time zone for the user group
+            $shiftStart[$i] = CakeTime::toUnix($shiftStartTime, $this->field('timezone'));
+        }
+
+        return $shiftStart;
+    }
+
+    public function get_shift_label($shiftStart = null) {
+
+        #Based on $shiftStart times provided, determines what the label is for a turnover created right now
+
+        $j = 1;
+        if(time() < $shiftStart[$j]) {
+            // Display "Night Shift" plus the previous day's date
+            $shiftLabel = "Night Shift - ".date('m/d/y', time()-60*60*24);
+        }
+        elseif(time()<$shiftStart[$j+1]){
+            $shiftLabel = "Day Shift - ".date('m/d/y', time());
+        }
+        else {
+            $shiftLabel = "Night Shift - ".date('m/d/y', time());
+        }
+
+        return $shiftLabel;
+    }
 
 }

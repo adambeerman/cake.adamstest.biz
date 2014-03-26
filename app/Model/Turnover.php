@@ -100,4 +100,41 @@ class Turnover extends AppModel {
     public function isOwnedBy($post, $user) {
         return $this->field('id', array('id' => $post, 'user_id' => $user)) === $post;
     }
+
+
+    // Used to set the Turnover Index
+    public function set_turnover_idx() {
+        //This sets the turnover index for a turnover
+        // This is used for grouping turnovers of a similar shift for navigating turnover groups
+        # starting point is 1970-1-1 @ midnight
+        $idx_start = date('Y-m-d', 0);
+        $num_shifts = $this->TurnoverGroup->ShiftCycle->field('num_shifts');
+        $midnight = date('Y-m-d', time());
+
+        $date1=date_create($idx_start);
+        $date2=date_create($midnight);
+        $diff=date_diff($date1,$date2);
+
+        $days = $diff->days;
+        $shifts = $days * $num_shifts;
+
+        // Compile shift start times into an array called $start
+        $time = date('h:i:s', time());
+        for($i=1;$i<=$num_shifts;$i++) {
+            $start[$i] = $this->TurnoverGroup->ShiftCycle->field('shift_start_'.$i);
+        }
+
+        //Need to validate if these properly adjust for the different shift times
+
+        // Find index correction based on number of shifts elapsed in the day
+        $idx_correct=0;
+        for($j=1;$j<=$num_shifts;$j++) {
+            if($time > $start[$j]){
+                $idx_correct++;
+            }
+        }
+
+        return $shifts+$idx_correct;
+
+    }
 }

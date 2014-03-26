@@ -49,6 +49,8 @@ class TurnoversController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Turnover->create();
+            $this->request->data('Turnover.turnover_idx',
+                $this->Turnover->set_turnover_idx());
 			if ($this->Turnover->save($this->request->data)) {
 				$this->Session->setFlash(__('The turnover has been saved.'));
 				return $this->redirect(array('action' => 'index'));

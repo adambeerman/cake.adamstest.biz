@@ -9,7 +9,7 @@
 
 <div id = "turnover_prev">
     <?php echo $this->Html->link('<< Previous', array('controller'=>'turnover_groups',
-    'action' => 'view', )); ?>
+    'action' => 'view',$turnoverGroup['TurnoverGroup']['id'],$idx-1 )); ?>
 </div>
 
 <div id = "turnover_cur">
@@ -17,7 +17,8 @@
 </div>
 
 <div id = "turnover_next">
-    Next >>
+    <?php echo $this->Html->link('Next >>', array('controller'=>'turnover_groups',
+        'action' => 'view',$turnoverGroup['TurnoverGroup']['id'],$idx+1 )); ?>
 </div>
 
 <br>
