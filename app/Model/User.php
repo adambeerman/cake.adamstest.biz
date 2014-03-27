@@ -1,5 +1,6 @@
 <?php
-App::uses('SimplePasswordHasher', 'Controller/Component/Auth', 'AppModel', 'Model');
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
+App::uses('AppModel', 'Model');
 /**
  * User Model
  *

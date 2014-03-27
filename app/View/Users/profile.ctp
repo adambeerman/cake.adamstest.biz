@@ -85,3 +85,17 @@
         <br>
     <?php endforeach; */?>
 </div>
+<br>
+
+<div class = 'turnover_group'>
+    <h3>Turnovers in my Business Unit</h3>
+    <?php foreach($userTOGroups as $TOGroup) {
+        echo $this->Html->link($TOGroup['TurnoverGroup']['name'],array(
+            'controller' => 'turnover_groups', 'action' => 'view',
+            $TOGroup['TurnoverGroup']['id'])
+        );
+        echo "<br>";
+    }
+
+    ?>
+</div>

@@ -228,8 +228,16 @@ class UsersController extends AppController {
             ),
             'limit' => 10,
         );
+
+        $paramsTOGroups = array(
+            'conditions' => array(
+                'TurnoverGroup.business_unit_id' => $this->Auth->user('business_unit_id')
+            ),
+            'recursive' => -1,
+        );
         $this->set('refineryInfo',$this->User->Plant->BusinessUnit->Refinery->find('first', array('recursive' =>  0)));
         $this->set('userTOs', $this->User->Turnover->find('all', $paramsTOs));
+        $this->set('userTOGroups', $this->User->Turnover->TurnoverGroup->find('all', $paramsTOGroups));
         //$this->loadModel('TurnoverGroup');
 
         //Find the turnover group id's that this belongs to. :

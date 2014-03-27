@@ -100,12 +100,11 @@ class TurnoverGroupsController extends AppController {
         $shiftStarts = $this->TurnoverGroup->get_shift_starts($id, $numShifts);
         $this->set('startTimes',$shiftStarts);
 
-        // Find & Set shift labels for Turnover Group View page
-        // [NEED TO] if the $idx has been specified, need to find the new shift name
+        // Find & Set shift labels for Turnover Group View page\
 
         $shiftLabel = $this->TurnoverGroup->get_shift_label($id, $idx);
 
-
+        // Pass the shiftlabel to the view
         $this->set('shift', $shiftLabel);
 
         // If an index is provided, use it. Otherwise, find what the current index is
@@ -120,7 +119,9 @@ class TurnoverGroupsController extends AppController {
             'SELECT * FROM turnovers AS Turnover WHERE Turnover.turnover_group_id = '.$id.' AND
                 Turnover.turnover_idx = '.$idx.';');
 
+        //Pass appropriate turnovers to the view
         $this->set('turnovers', $turnovers);
+
 
         $options = array('conditions' => array('TurnoverGroup.id' => $id),
             'recursive' => -1);
