@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('CakeTime', 'Utility');
 /**
  * TurnoverGroup Model
  *
  * @property BusinessUnit $BusinessUnit
  * @property Refinery $Refinery
- * @property ShiftCycle $ShiftCycle
  * @property Turnover $Turnover
  */
 class TurnoverGroup extends AppModel {
@@ -65,13 +65,6 @@ class TurnoverGroup extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'ShiftCycle' => array(
-			'className' => 'ShiftCycle',
-			'foreignKey' => 'shift_cycle_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -97,38 +90,84 @@ class TurnoverGroup extends AppModel {
 	);
 
 
-    public function get_shift_starts($id = null, $numShifts = null) {
-        # Returns an array of shift starting times
+    public function get_shift_starts($id = null) {
+        # Return array of startTimes
+
+        $numShifts = $this->Turnover->get_num_shifts($id);
+
+        $conditions = array(
+            'TurnoverGroup.id' => $id
+        );
+
         for($i = 1; $i <= $numShifts; $i++) {
-            $startTime[$i] = $this->ShiftCycle->field('shift_start_'.$i);
+            $shiftStarts[$i] = $this->field('shift_start_'.$i, $conditions);
 
             //Concatenate today's date with the shift start
-            $shiftStartTime = date('Y-m-d',time()).' '.$startTime[$i];
+            //$shiftStartTime = date('Y-m-d',time()).' '.$startTime[$i];
 
             // This will eventually [NEED TO] be updated with the time zone for the user group
-            $shiftStart[$i] = CakeTime::toUnix($shiftStartTime, $this->field('timezone'));
+            //$shiftStart[$i] = CakeTime::toUnix($shiftStartTime, $this->field('timezone'));
         }
 
-        return $shiftStart;
+        return $shiftStarts;
     }
 
-    public function get_shift_label($shiftStart = null) {
+    public function get_shift_label($id = null, $idx = null) {
 
-        #Based on $shiftStart times provided, determines what the label is for a turnover created right now
+        $numShifts = $this->Turnover->get_num_shifts($id);
+        $idx_start = date('Y-m-d', 0);
 
-        $j = 1;
-        if(time() < $shiftStart[$j]) {
-            // Display "Night Shift" plus the previous day's date
-            $shiftLabel = "Night Shift - ".date('m/d/y', time()-60*60*24);
-        }
-        elseif(time()<$shiftStart[$j+1]){
-            $shiftLabel = "Day Shift - ".date('m/d/y', time());
-        }
-        else {
-            $shiftLabel = "Night Shift - ".date('m/d/y', time());
+        $conditions = array(
+            'TurnoverGroup.id' => $id
+        );
+
+        # if idx is not set, then default to using the current time()
+
+        if(!isset($idx)){
+            // Get time in H:M:S format
+            $time = date('H:i:s', time());
+            $date = date('m/d/y', time());
+
+            $shiftStarts = $this->get_shift_starts($id);
+
+            // Collect
+
+            $labelIdx = $numShifts;
+
+            if ($time < $shiftStarts[1]) {
+                $labelIdx = $numShifts;
+            }
+            else if ($time < $shiftStarts[2]){
+                $labelIdx = 1;
+            }
+            else {
+                $labelIdx = $numShifts;
+            }
+
+            $shiftLabel = $this->field('shift_name_'.$labelIdx, $conditions);
+
+        } else {
+            // Find out where this idx would fit in time
+
+            // Grab date approximation (does not account for daylight savings time);
+            $date = date('m/d/y',($idx*(24*60*60/$numShifts)-12*60*60));
+            $shift = $idx%$numShifts;
+
+            if($shift == 0) {
+                $shiftLabel = $this->field('shift_name_1', $conditions);
+            }
+            elseif ($shift == 1) {
+                $shiftLabel = $this->field('shift_name_2', $conditions);
+            }
+            elseif ($shift == 2) {
+                $shiftLabel = $this->field('shift_name_3', $conditions);
+            }
+            else {
+                $shiftLabel = $this->field('shift_name_4', $conditions);
+            }
         }
 
-        return $shiftLabel;
+        return $shiftLabel." - ".$date;
+
     }
-
 }

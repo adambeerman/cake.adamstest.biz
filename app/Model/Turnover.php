@@ -103,12 +103,21 @@ class Turnover extends AppModel {
 
 
     // Used to set the Turnover Index
-    public function set_turnover_idx() {
-        //This sets the turnover index for a turnover
+    public function set_turnover_idx($to_grp_id = null) {
+        // This sets the turnover index for a turnover
         // This is used for grouping turnovers of a similar shift for navigating turnover groups
         # starting point is 1970-1-1 @ midnight
+
+        // $to_grp_id will be used to get the exact starting shift time
+
         $idx_start = date('Y-m-d', 0);
-        $num_shifts = $this->TurnoverGroup->ShiftCycle->field('num_shifts');
+
+        $conditions = array(
+            'TurnoverGroup.id' => $to_grp_id
+        );
+
+        $num_shifts = $this->get_num_shifts($to_grp_id);
+
         $midnight = date('Y-m-d', time());
 
         $date1=date_create($idx_start);
@@ -121,7 +130,7 @@ class Turnover extends AppModel {
         // Compile shift start times into an array called $start
         $time = date('h:i:s', time());
         for($i=1;$i<=$num_shifts;$i++) {
-            $start[$i] = $this->TurnoverGroup->ShiftCycle->field('shift_start_'.$i);
+            $start[$i] = $this->TurnoverGroup->field('shift_start_'.$i, $conditions);
         }
 
         //Need to validate if these properly adjust for the different shift times
@@ -136,5 +145,14 @@ class Turnover extends AppModel {
 
         return $shifts+$idx_correct;
 
+    }
+
+    public function get_num_shifts($turnover_group_id = null) {
+        $conditions = array(
+            'TurnoverGroup.id' => $turnover_group_id
+        );
+
+        $num_shifts = $this->TurnoverGroup->field('num_shifts', $conditions);
+        return $num_shifts;
     }
 }

@@ -190,15 +190,11 @@ class UsersController extends AppController {
         $user = $this->User->findById($this->Auth->user('id'));
         $this->set('userData', $user);
         $this->set('title_for_layout', "USER TITLE");
+
+
         // If a user is new, and has "0" for their company, refinery, and plants, we need to go through a welcome process
 
-        /*
-         * If a user does not have a company_id yet, we need to initiate that right away
-        if($user['company_id']==0) {
-            return $this->redirect(array('action'=>'profile_setup',$user['id']));
-        }
-
-        */
+        // [TO DO]
 
         // Handle an ajax request
         if($this->request->is('ajax')) {

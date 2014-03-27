@@ -93,26 +93,24 @@ class TurnoverGroupsController extends AppController {
         //Current Time
         $this->set('currentTime', time());
 
-        $numShifts = $this->TurnoverGroup->ShiftCycle->field('num_shifts');
+        //Get num shifts
+        $numShifts = $this->TurnoverGroup->Turnover->get_num_shifts($id);
 
         // Find & Set shift start times
-        $shiftStart = $this->TurnoverGroup->get_shift_starts($id, $numShifts);
-        $this->set('startTimes',$shiftStart);
+        $shiftStarts = $this->TurnoverGroup->get_shift_starts($id, $numShifts);
+        $this->set('startTimes',$shiftStarts);
 
         // Find & Set shift labels for Turnover Group View page
         // [NEED TO] if the $idx has been specified, need to find the new shift name
-        if(!isset($idx)){
-            $shiftLabel = $this->TurnoverGroup->get_shift_label($shiftStart);
-        }
-        else {
-            $shiftLabel = "need to program the shift label";
-        }
+
+        $shiftLabel = $this->TurnoverGroup->get_shift_label($id, $idx);
+
 
         $this->set('shift', $shiftLabel);
 
         // If an index is provided, use it. Otherwise, find what the current index is
         if(!isset($idx)){
-            $idx = $this->TurnoverGroup->Turnover->set_turnover_idx();
+            $idx = $this->TurnoverGroup->Turnover->set_turnover_idx($id);
         }
 
         //Pass index to view for creating new links
@@ -151,8 +149,7 @@ class TurnoverGroupsController extends AppController {
 
 		$businessUnits = $this->TurnoverGroup->BusinessUnit->find('list');
 		$refineries = $this->TurnoverGroup->Refinery->find('list');
-		$shiftCycles = $this->TurnoverGroup->ShiftCycle->find('list');
-		$this->set(compact('businessUnits', 'refineries', 'shiftCycles'));
+		$this->set(compact('businessUnits', 'refineries'));
 	}
 
 /**
@@ -179,8 +176,7 @@ class TurnoverGroupsController extends AppController {
 		}
 		$businessUnits = $this->TurnoverGroup->BusinessUnit->find('list');
 		$refineries = $this->TurnoverGroup->Refinery->find('list');
-		$shiftCycles = $this->TurnoverGroup->ShiftCycle->find('list');
-		$this->set(compact('businessUnits', 'refineries', 'shiftCycles'));
+		$this->set(compact('businessUnits', 'refineries'));
 	}
 
 /**
