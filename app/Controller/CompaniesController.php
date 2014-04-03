@@ -7,6 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
+
+App::uses('AppController','Controller');
+
 class CompaniesController extends AppController {
 
     var $scaffold = 'admin';
@@ -16,5 +19,14 @@ class CompaniesController extends AppController {
 
         $this->set('companies', $this->Company->find('all'));
 
+
+
     }
+
+    public function test() {
+
+
+
+    }
+
 }

@@ -76,14 +76,6 @@
     }
     ?>
 
-
-    <?php /*foreach($data['Turnover'] as $turnover): ?>
-    <?php echo $this->Time->format($turnover['created'], '%m/%d')." - ".
-            $this->Html->link($turnover['name'],
-        array('controller' => 'turnover_groups', 'action' => 'profile',
-        $turnover['turnover_group_id'])); ?>
-        <br>
-    <?php endforeach; */?>
 </div>
 <br>
 

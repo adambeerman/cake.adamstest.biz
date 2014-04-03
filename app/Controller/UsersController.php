@@ -71,6 +71,12 @@ class UsersController extends AppController {
             // Determine the company based on the e-mail address
 
 			$this->User->create();
+
+            // Get the company id, based on the e-mail
+            // 0 is returned if no company found. To be prompted later.
+            $this->request->data('User.company_id',
+                $this->User->Company->find_company_from_email($this->request->data('User.email')));
+
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('User has been added..'));
 				return $this->redirect(array('action' => 'index'));
@@ -90,10 +96,6 @@ class UsersController extends AppController {
             $this->set(compact('companies', 'businessUnits', 'refineries', 'plants'));
 		}
 	}
-
-    public function validate_email($suffix = null) {
-        $this->autoRender = false;
-    }
 
 /**
  * edit method
@@ -247,7 +249,7 @@ class UsersController extends AppController {
     }
 
     public function plant_edit($id = null) {
-        //This function provides user a lists of plants available to them to add/remove from profile
+        //This function provides user a lists of plants available to them to add/remove from profilef
 
         if(!$id) {
             throw new NotFoundException(__('Invalid id'));
@@ -262,6 +264,7 @@ class UsersController extends AppController {
 
         if($this->request->is(array('post','put'))) {
             $this->User->id = $id;
+
             if($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('Plant info has been saved'));
                 return $this->redirect(array('action'=>'profile'));
