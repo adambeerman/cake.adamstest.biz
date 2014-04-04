@@ -65,7 +65,7 @@
 </div>
 <br>
 
-<div class = 'turnover'>
+<div>
     <h3>My Turnovers</h3>
     <?php foreach($userTOs as $turnover) {
         echo $this->Time->format($turnover['Turnover']['created'], '%m/%d')." - ".

@@ -37,6 +37,7 @@
     position: relative;
     background: lightgray;
 
+    /* Give the same effect as the <pre> sections */
     color: #000;
     background: #f0f0f0;
     padding: 15px;

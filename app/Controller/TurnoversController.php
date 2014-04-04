@@ -55,6 +55,8 @@ class TurnoversController extends AppController {
 			$this->Turnover->create();
             $this->request->data('Turnover.turnover_group_id', $turnover_group_id);
             $this->request->data('Turnover.user_id', $user_id);
+
+            // Setting Turnover Index - However, what if this is already set and you are adding a past turnover?
             $this->request->data('Turnover.turnover_idx',
                 $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id')));
 			if ($this->Turnover->save($this->request->data)) {
@@ -72,7 +74,11 @@ class TurnoversController extends AppController {
 		//$turnoverGroups = $this->Turnover->TurnoverGroup->find('list');
 		//$users = $this->Turnover->User->find('list');
 		$this->set(compact('turnoverGroups', 'users'));
-	}
+
+        // $idx = $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id'));
+        // $label = $this->Turnover->TurnoverGroup->get_shift_label()
+
+        }
 
 /**
  * edit method

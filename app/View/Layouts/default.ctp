@@ -43,7 +43,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<div id="container">
 
         <div id="header">
-            <?php echo $this->Html->link(APP_NAME, '/users/index'); ?>
+            <?php echo $this->Html->link(APP_NAME, '/users/profile'); ?>
             <?php if($this->Session->read('Auth.User')): ?>
                 <ul>
                     <li>
