@@ -23,32 +23,37 @@
 
 <br>
 
-<?php foreach($turnovers as $turnover): ?>
+<div class = "turnover_container">
+    <?php foreach($turnovers as $turnover): ?>
+
+        <div class = "turnover sortable">
+            <?php // I want the user to be able to edit the turnover if they created it ?>
+
+            <h4><?php echo $turnover['Turnover']['name']; ?></h4>
+
+            <?php if($turnover['Turnover']['user_id']==AuthComponent::user('id')) {
+                //If user owns this turnover, give them a link to modify it
+                echo $this->Html->link(
+                    $turnover['Turnover']['content'],
+                    array('controller' => 'turnovers','action'=>'edit', $turnover['Turnover']['id'])
+                );
+            }
+            else {
+                // Otherwise, just echo the content
+                echo $turnover['Turnover']['content'];
+            }
+
+            ?>
+        </div>
+
+        <br>
+
+    <?php endforeach; ?>
 
     <div class = "turnover">
-        <?php // I want the user to be able to edit the turnover if they created it ?>
-
-        <h4><?php echo $turnover['Turnover']['name']; ?></h4>
-
-        <?php if($turnover['Turnover']['user_id']==AuthComponent::user('id')) {
-            //If user owns this turnover, give them a link to modify it
-            echo $this->Html->link(
-                $turnover['Turnover']['content'],
-                array('controller' => 'turnovers','action'=>'edit', $turnover['Turnover']['id'])
-            );
-        }
-        else {
-            // Otherwise, just echo the content
-            echo $turnover['Turnover']['content'];
-        }
-
-        ?>
+        <?php echo $this->Html->link(__('New Turnover'), array('controller' => 'turnovers', 'action' => 'add',
+            $turnoverGroup['TurnoverGroup']['id'], AuthComponent::user('id'))); ?>
     </div>
-
-    <br>
-
-<?php endforeach; ?>
-
-<div class = "turnover">
-    <?php echo $this->Html->link(__('New Turnover'), array('controller' => 'turnovers', 'action' => 'add')); ?>
 </div>
+
+

@@ -1,4 +1,4 @@
-/* Main Configuration file for CSS */
+ /* Main Configuration file for CSS */
 
 .company_logo {
     max-width: 100px;
@@ -34,6 +34,15 @@
     /*border: 1px solid black;*/
     width: 40%;
     clear: left;
+    position: relative;
+    background: lightgray;
+
+    color: #000;
+    background: #f0f0f0;
+    padding: 15px;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 #turnover_prev, #turnover_cur, #turnover_next {

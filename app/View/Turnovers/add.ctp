@@ -4,9 +4,9 @@
 		<legend><?php echo __('Add Turnover'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('turnover_group_id');
-		echo $this->Form->input('user_id');
-		echo $this->Form->input('content');
+		//echo $this->Form->input('turnover_group_id');
+		//echo $this->Form->input('user_id');
+		echo $this->Form->input('content', array('rows' => '3'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

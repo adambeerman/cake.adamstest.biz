@@ -77,8 +77,11 @@ class UsersController extends AppController {
             $this->request->data('User.company_id',
                 $this->User->Company->find_company_from_email($this->request->data('User.email')));
 
+            $this->request->data('User.hash', md5(rand(0,1000)));
+
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('User has been added..'));
+                $msg = 'Your account has been made, <br /> please verify it by clicking the activation link that has been send to your email.';
+				$this->Session->setFlash(__($msg));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(
@@ -228,7 +231,7 @@ class UsersController extends AppController {
             'order' => array(
                 'Turnover.created' => 'DESC'
             ),
-            'limit' => 10,
+            'limit' => 5,
         );
 
         $paramsTOGroups = array(

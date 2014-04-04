@@ -130,13 +130,16 @@ class Turnover extends AppModel {
         // Compile shift start times into an array called $start
         $time = date('h:i:s', time());
         for($i=1;$i<=$num_shifts;$i++) {
+
+            //Shift Starts
             $start[$i] = $this->TurnoverGroup->field('shift_start_'.$i, $conditions);
         }
 
         //Need to validate if these properly adjust for the different shift times
 
         // Find index correction based on number of shifts elapsed in the day
-        $idx_correct=0;
+        // Subtract 1 if from the night before, progressively add 1, depending on which shift we are in.
+        $idx_correct=-1;
         for($j=1;$j<=$num_shifts;$j++) {
             if($time > $start[$j]){
                 $idx_correct++;

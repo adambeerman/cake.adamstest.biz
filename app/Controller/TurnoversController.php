@@ -46,9 +46,15 @@ class TurnoversController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($turnover_group_id=null, $user_id = null) {
+
+        //debug($this->request->referer(false));
+
 		if ($this->request->is('post')) {
+
 			$this->Turnover->create();
+            $this->request->data('Turnover.turnover_group_id', $turnover_group_id);
+            $this->request->data('Turnover.user_id', $user_id);
             $this->request->data('Turnover.turnover_idx',
                 $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id')));
 			if ($this->Turnover->save($this->request->data)) {
@@ -58,8 +64,13 @@ class TurnoversController extends AppController {
 				$this->Session->setFlash(__('The turnover could not be saved. Please, try again.'));
 			}
 		}
-		$turnoverGroups = $this->Turnover->TurnoverGroup->find('list');
-		$users = $this->Turnover->User->find('list');
+
+        $this->request->data['Turnover']['user_id'] = $user_id;
+        $this->request->data['Turnover']['turnover_group_id'] = $turnover_group_id;
+
+        // Shouldn't need to pass in the turnover group and user lists. We will already know this.
+		//$turnoverGroups = $this->Turnover->TurnoverGroup->find('list');
+		//$users = $this->Turnover->User->find('list');
 		$this->set(compact('turnoverGroups', 'users'));
 	}
 
