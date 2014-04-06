@@ -4,7 +4,9 @@
 </pre>
 
 <h2>
-    <?php echo $turnoverGroup['TurnoverGroup']['name'];?>
+    <?php echo $this->Html->link($turnoverGroup['TurnoverGroup']['name'], array(
+        'controller' => 'turnover_groups', 'action' => 'view', $turnoverGroup['TurnoverGroup']['id'])
+    );?>
 </h2>
 
 <div id = "turnover_prev">

@@ -243,6 +243,7 @@ class UsersController extends AppController {
         $this->set('refineryInfo',$this->User->Plant->BusinessUnit->Refinery->find('first', array('recursive' =>  0)));
         $this->set('userTOs', $this->User->Turnover->find('all', $paramsTOs));
         $this->set('userTOGroups', $this->User->Turnover->TurnoverGroup->find('all', $paramsTOGroups));
+        $this->set('userPFDs', $this->User->Pfd->find('all', array('conditions' => array('Pfd.user_id' => $this->Auth->user('id')))));
         //$this->loadModel('TurnoverGroup');
 
         //Find the turnover group id's that this belongs to. :

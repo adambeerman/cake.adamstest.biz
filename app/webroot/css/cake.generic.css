@@ -380,7 +380,7 @@ form .error {
 form .error-message {
 	-moz-border-radius: none;
 	-webkit-border-radius: none;
-	border-radius: none;
+	border-radius: 0;
 	border: none;
 	background: none;
 	margin: 0;

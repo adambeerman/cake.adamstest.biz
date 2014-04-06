@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * PfdConnection Model
  *
- * @property Pfd $Pfd
+ * @property Pfd $Pfds
  * @property PfdItem $PfdItemA
  * @property PfdItem $PfdItemB
  */
@@ -99,8 +99,8 @@ class PfdConnection extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Pfd' => array(
-			'className' => 'Pfd',
+		'Pfds' => array(
+			'className' => 'Pfds',
 			'foreignKey' => 'pfd_id',
 			'conditions' => '',
 			'fields' => '',

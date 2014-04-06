@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026e687f-2022-4876-a5f2-1f46bcceab01" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/TurnoversController.php" afterPath="$PROJECT_DIR$/app/Controller/TurnoversController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Layouts/default.ctp" afterPath="$PROJECT_DIR$/app/View/Layouts/default.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Turnovers/edit.ctp" afterPath="$PROJECT_DIR$/app/View/Turnovers/edit.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/PfdItems/add.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Pfds/add.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Pfds/build.ctp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Pfds/view.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/PfdConnection.php" afterPath="$PROJECT_DIR$/app/Model/PfdConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/PfdItem.php" afterPath="$PROJECT_DIR$/app/Model/PfdItem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/PfdsController.php" afterPath="$PROJECT_DIR$/app/Controller/PfdsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/User.php" afterPath="$PROJECT_DIR$/app/Model/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/UsersController.php" afterPath="$PROJECT_DIR$/app/Controller/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/cake.generic.css" afterPath="$PROJECT_DIR$/app/webroot/css/cake.generic.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/main.css" afterPath="$PROJECT_DIR$/app/webroot/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Plants/profile.ctp" afterPath="$PROJECT_DIR$/app/View/Plants/profile.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Users/profile.ctp" afterPath="$PROJECT_DIR$/app/View/Users/profile.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" afterPath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cakephp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396576828888" ignored="false" />
+    <file path="/Dummy.txt" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396713435710" ignored="false" />
     <file path="$PROJECT_DIR$/../cakephp/app/Controller/PagesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394125778170" ignored="false" />
     <file path="$PROJECT_DIR$/../cakephp/app/webroot/.htaccess" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394125778170" ignored="false" />
     <file path="$PROJECT_DIR$/../cakephp/lib/Cake/Test/Fixture/soap_request.xml" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394125778170" ignored="false" />
@@ -24,17 +33,17 @@
     <file path="/Post.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394415087770" ignored="false" />
     <file path="/PostsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394569274608" ignored="false" />
     <file path="/index.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395677761417" ignored="false" />
-    <file path="/view.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396626094263" ignored="false" />
+    <file path="/view.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396807370141" ignored="false" />
     <file path="/a.coffee" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162253371" ignored="false" />
     <file path="/a.feature" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162258338" ignored="false" />
-    <file path="/add.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396625515701" ignored="false" />
+    <file path="/add.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396808164961" ignored="false" />
     <file path="/a.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394205253621" ignored="false" />
     <file path="/test.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394204624170" ignored="false" />
     <file path="/edit.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396626568432" ignored="false" />
     <file path="/routes.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394207633169" ignored="false" />
     <file path="/CategoriesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394208311025" ignored="false" />
     <file path="/User.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396559712876" ignored="false" />
-    <file path="/UsersController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396579691473" ignored="false" />
+    <file path="/UsersController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396786016149" ignored="false" />
     <file path="/Equipment.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394494519381" ignored="false" />
     <file path="/Plant.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394980585441" ignored="false" />
     <file path="/EquipmentController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394507542835" ignored="false" />
@@ -46,7 +55,7 @@
     <file path="/CompaniesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396560755210" ignored="false" />
     <file path="/Company.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396562678781" ignored="false" />
     <file path="/Refinery.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395076421779" ignored="false" />
-    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396630544022" ignored="false" />
+    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396807742240" ignored="false" />
     <file path="/default.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395501278389" ignored="false" />
     <file path="/HeuristicsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487386918" ignored="false" />
     <file path="/Heuristic.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487360649" ignored="false" />
@@ -57,7 +66,7 @@
     <file path="/PumpsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394511791093" ignored="false" />
     <file path="/UnitsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394991144002" ignored="false" />
     <file path="/AppController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395243318999" ignored="false" />
-    <file path="/profile.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395956970954" ignored="false" />
+    <file path="/profile.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396802441671" ignored="false" />
     <file path="/UnitTypesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394995708470" ignored="false" />
     <file path="/v_index_index.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395060339357" ignored="false" />
     <file path="$PROJECT_DIR$/../th/views/v_index_index.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395060467170" ignored="false" />
@@ -87,7 +96,11 @@
     <file path="$PROJECT_DIR$/../bcu/index.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395584408717" ignored="false" />
     <file path="/index.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395344838481" ignored="false" />
     <file path="$PROJECT_DIR$/../rubytest/blog/app/controllers/welcome_controller.rb" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395765955434" ignored="false" />
-    <file path="$PROJECT_DIR$/app/tmp/logs/error.log" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395952147591" ignored="false" />
+    <file path="/PfdsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396808345794" ignored="false" />
+    <file path="/build.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396808737680" ignored="false" />
+    <file path="/a.dummy" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396786028787" ignored="false" />
+    <file path="/cake.generic.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396807507999" ignored="false" />
+    <file path="/PfdItemsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396809093504" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,16 +123,34 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="23" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
+            <state line="96" column="21" selection-start="1573" selection-end="1573" vertical-scroll-proportion="-15.038462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Users/profile.ctp">
+      <file leaf-file-name="PfdItemsController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Controller/PfdItemsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="6" selection-start="1607" selection-end="1607" vertical-scroll-proportion="-4.5">
+            <state line="67" column="20" selection-start="1559" selection-end="1559" vertical-scroll-proportion="0.09319899">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PfdsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controller/PfdsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="0" selection-start="3597" selection-end="3597" vertical-scroll-proportion="-3.54">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/Turnovers/add.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -128,70 +159,52 @@
       <file leaf-file-name="TurnoversController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="11" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-6.5588236">
+            <state line="55" column="83" selection-start="1116" selection-end="1187" vertical-scroll-proportion="-2.34">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Layouts/js/default.ctp">
+      <file leaf-file-name="profile.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/Users/profile.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="31" column="20" selection-start="330" selection-end="902" vertical-scroll-proportion="-19.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
+      <file leaf-file-name="add.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/Pfds/add.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="34" selection-start="1064" selection-end="1064" vertical-scroll-proportion="-11.875">
+            <state line="0" column="0" selection-start="0" selection-end="482" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PfdConnection.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Model/PfdConnection.php">
+      <file leaf-file-name="add.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/PfdItems/add.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="31" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.5388349">
+            <state line="11" column="46" selection-start="420" selection-end="420" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PfdItem.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Model/PfdItem.php">
+      <file leaf-file-name="build.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/Pfds/build.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="31" selection-start="1972" selection-end="1972" vertical-scroll-proportion="-8.25">
+            <state line="25" column="52" selection-start="771" selection-end="771" vertical-scroll-proportion="-8.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Turnovers/edit.ctp">
+      <file leaf-file-name="view.ctp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/View/Pfds/view.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="30" selection-start="801" selection-end="801" vertical-scroll-proportion="-14.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TurnoverGroup.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Model/TurnoverGroup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="52" selection-start="2499" selection-end="2502" vertical-scroll-proportion="5.897059">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Turnover.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Model/Turnover.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="0" selection-start="3260" selection-end="3260" vertical-scroll-proportion="-18.0">
+            <state line="3" column="4" selection-start="75" selection-end="75" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
           </provider>
@@ -215,29 +228,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/Controller/AppController.php" />
-        <option value="$PROJECT_DIR$/app/Model/User.php" />
-        <option value="$PROJECT_DIR$/app/Controller/CompaniesController.php" />
-        <option value="$PROJECT_DIR$/app/Model/Company.php" />
-        <option value="$PROJECT_DIR$/app/Controller/UsersController.php" />
-        <option value="$PROJECT_DIR$/app/Model/Turnover.php" />
-        <option value="$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php" />
+        <option value="$PROJECT_DIR$/app/View/Plants/profile.ctp" />
         <option value="$PROJECT_DIR$/app/View/Turnovers/add.ctp" />
-        <option value="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
-        <option value="$PROJECT_DIR$/app/View/Turnovers/edit.ctp" />
-        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
+        <option value="$PROJECT_DIR$/app/View/Pfds/add.ctp" />
+        <option value="$PROJECT_DIR$/app/Model/User.php" />
+        <option value="$PROJECT_DIR$/app/Model/Pfd.php" />
+        <option value="$PROJECT_DIR$/app/Controller/UsersController.php" />
+        <option value="$PROJECT_DIR$/app/View/Posts/index.ctp" />
         <option value="$PROJECT_DIR$/app/View/Users/profile.ctp" />
-        <option value="$PROJECT_DIR$/app/Controller/TurnoversController.php" />
-        <option value="$PROJECT_DIR$/app/View/Layouts/default.ctp" />
-        <option value="$PROJECT_DIR$/app/Model/PfdConnection.php" />
-        <option value="$PROJECT_DIR$/app/Model/PfdItem.php" />
+        <option value="$PROJECT_DIR$/app/View/Pfds/view.ctp" />
+        <option value="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
+        <option value="$PROJECT_DIR$/app/webroot/css/cake.generic.css" />
+        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
+        <option value="$PROJECT_DIR$/app/View/PfdItems/add.ctp" />
+        <option value="$PROJECT_DIR$/app/Controller/PfdsController.php" />
+        <option value="$PROJECT_DIR$/app/View/Pfds/build.ctp" />
+        <option value="$PROJECT_DIR$/app/Controller/PfdItemsController.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="45" />
-    <option name="y" value="22" />
+    <option name="x" value="247" />
+    <option name="y" value="41" />
     <option name="width" value="1315" />
     <option name="height" value="788" />
   </component>
@@ -304,7 +317,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -501,6 +513,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -545,7 +579,117 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Turnovers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TurnoverGroups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Plants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pfds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PfdItems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,24 +777,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cakephp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cake.adamstest.biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -673,26 +799,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cakephp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cake.adamstest.biz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -746,14 +855,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="22" width="1315" height="788" extended-state="0" />
+    <frame x="247" y="41" width="1315" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28138527" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23498099" sideWeight="0.6724387" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23498099" sideWeight="0.7186147" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -762,7 +872,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -829,114 +938,120 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="9" selection-start="3882" selection-end="3882" vertical-scroll-proportion="-3.25">
+        <state line="17" column="24" selection-start="292" selection-end="292" vertical-scroll-proportion="11.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Turnovers/view.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Turnovers/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="68" selection-start="725" selection-end="725" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Posts/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="56" selection-start="176" selection-end="196" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="62" selection-start="1723" selection-end="1723" vertical-scroll-proportion="-18.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Turnovers/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="336" selection-end="336" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Turnovers/edit.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="30" selection-start="801" selection-end="801" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="23" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Users/profile.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="6" selection-start="1607" selection-end="1607" vertical-scroll-proportion="-4.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/TurnoverGroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="52" selection-start="2499" selection-end="2502" vertical-scroll-proportion="5.897059">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Turnover.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="0" selection-start="3260" selection-end="3260" vertical-scroll-proportion="-18.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="11" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-6.5588236">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Layouts/js/default.ctp">
+    <entry file="file://$PROJECT_DIR$/app/View/Posts/view.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
+    <entry file="file://$PROJECT_DIR$/app/Model/Pfd.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="34" selection-start="1064" selection-end="1064" vertical-scroll-proportion="-11.875">
+        <state line="10" column="3" selection-start="186" selection-end="187" vertical-scroll-proportion="11.62">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/PfdItem.php">
+    <entry file="file://$PROJECT_DIR$/app/View/Posts/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="31" selection-start="1972" selection-end="1972" vertical-scroll-proportion="-8.25">
+        <state line="49" column="20" selection-start="1169" selection-end="1173" vertical-scroll-proportion="-2.0441177">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/PfdConnection.php">
+    <entry file="file://$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="31" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.5388349">
+        <state line="7" column="101" selection-start="294" selection-end="294" vertical-scroll-proportion="-4.375">
+          <folding>
+            <marker date="1396807384000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396807384000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396807384000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396807384000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396807384000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/cake.generic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="31" selection-start="891" selection-end="891" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="21" selection-start="1573" selection-end="1573" vertical-scroll-proportion="-15.038462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Pfds/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="482" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Turnovers/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="83" selection-start="1116" selection-end="1187" vertical-scroll-proportion="-2.34">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/PfdItems/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="46" selection-start="420" selection-end="420" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/PfdsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="3597" selection-end="3597" vertical-scroll-proportion="-3.54">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Pfds/view.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="75" selection-end="75" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Users/profile.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="20" selection-start="330" selection-end="902" vertical-scroll-proportion="-19.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Pfds/build.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="52" selection-start="771" selection-end="771" vertical-scroll-proportion="-8.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/PfdItemsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="20" selection-start="1559" selection-end="1559" vertical-scroll-proportion="0.09319899">
           <folding />
         </state>
       </provider>

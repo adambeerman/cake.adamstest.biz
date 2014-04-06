@@ -15,7 +15,7 @@ class User extends AppModel {
 	public $useDbConfig = 'test';
 
     public $hasMany = array(
-        'Turnover'
+        'Turnover', 'Pfd'
     );
 
     public $belongsTo = array(
