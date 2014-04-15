@@ -9,6 +9,14 @@ App::uses('AppController', 'Controller');
  */
 class PfdItemsController extends AppController {
 
+    /**
+     * Helper array
+     * @var array
+     *
+     */
+
+    public $helpers = array('Js' => array('j_pfditems_view'));
+
 /**
  * Components
  *
@@ -34,11 +42,16 @@ class PfdItemsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+
+        debug($this->referer());
+
 		if (!$this->PfdItem->exists($id)) {
 			throw new NotFoundException(__('Invalid pfd item'));
 		}
 		$options = array('conditions' => array('PfdItem.' . $this->PfdItem->primaryKey => $id));
 		$this->set('pfdItem', $this->PfdItem->find('first', $options));
+
+
 	}
 
 /**
@@ -95,6 +108,7 @@ class PfdItemsController extends AppController {
  */
 	public function delete($id = null) {
 		$this->PfdItem->id = $id;
+        $pfd_id = $this->PfdItem->field('PfdItem.pfd_id', array('PfdItem.id' => $id));
 		if (!$this->PfdItem->exists()) {
 			throw new NotFoundException(__('Invalid pfd item'));
 		}
@@ -104,5 +118,5 @@ class PfdItemsController extends AppController {
 		} else {
 			$this->Session->setFlash(__('The pfd item could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('controller' => 'pfds', 'action' => 'build'));
+		return $this->redirect(array('controller' => 'pfds', 'action' => 'build', $pfd_id));
 	}}

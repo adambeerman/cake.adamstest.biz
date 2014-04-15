@@ -11,7 +11,7 @@
 
 <h3>PFD</h3>
 <h4><?php echo $this->Html->link('Build '.$data['Plant']['short_name'].' PFD!',
-    array('controller' => 'pfds', 'action' => 'build', AuthComponent::user('id'), $data['Plant']['id']));
+    array('controller' => 'pfds', 'action' => 'build', $data['Plant']['id']));
     ?></h4>
 
 <div class = 'unit'>

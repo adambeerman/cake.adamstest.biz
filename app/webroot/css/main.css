@@ -61,6 +61,9 @@ body {
     background: white;
     color: black;
 }
+#content {
+    background: white;
+}
 
 #pfd_builder {
     margin: 0 auto;
@@ -95,4 +98,22 @@ h2 a {
  color: #e32;
  font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;
  font-weight: normal;
+}
+
+.graphic_reactor {
+
+    outline-color: black;
+    border-radius: 40px;
+    width: 80px;
+    height: 160px;
+    background: lightgray;
+    text-align: center;
+    vertical-align: middle
+}
+
+.graphic_furnace {
+
+}
+canvas {
+    border: 1px dotted black;
 }

@@ -61,7 +61,8 @@ class TurnoversController extends AppController {
                 $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id')));
 			if ($this->Turnover->save($this->request->data)) {
 				$this->Session->setFlash(__('The turnover has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'turnover_groups', 'action' => 'view', $turnover_group_id));
+
 			} else {
 				$this->Session->setFlash(__('The turnover could not be saved. Please, try again.'));
 			}
