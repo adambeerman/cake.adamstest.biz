@@ -7,9 +7,23 @@
 
 <?php foreach($plants as $plant): ?>
 
-    <?php echo $this->Html->link($plant['Plant']['short_name'],
-        array('controller' => 'plants', 'action' => 'profile',
-            $plant['Plant']['id'])); ?>
+    <?php
+
+    echo $this->Html->link($plant['Plant']['short_name'],
+        array('controller' => 'plants',
+            'action' => 'profile',
+            $plant['Plant']['id']));
+
+    echo "<span class='faded'> | ";
+    echo $this->Form->postLink(
+        'Delete',
+        array('controller' => 'plants',
+            'action' => 'delete',
+            $plant['Plant']['id']),
+        array('confirm'=> 'Are you sure?'));
+    echo "</span>";
+    ?>
+
     <br />
 
 <?php endforeach; ?>
@@ -18,7 +32,7 @@
 <div id = "new_plant_placeholder"></div>
 <div id = "updating" style = "display: none">Adding Plant...</div>
 
-<span id = "add_plant">Add Plant?</span>
+<div id = "add_plant">Add Plant?</div>
 
 <div id ="new_plant" class = "hidden">
     <?php echo $this->Form->create('Plant',
@@ -26,14 +40,11 @@
             'default' => false,
             'type'=> 'post',
         ));
-    ?>
 
-    <?php
-
-    echo $this->Form->input('name');
-    echo $this->Form->input('short_name');
-    echo $this->Form->input('description');
-    echo $this->Form->input('prefix');
+    echo $this->Form->input('name', array('placeholder' => 'e.g. Jet Hydrotreater'));
+    echo $this->Form->input('short_name', array('placeholder' => 'e.g. JHT'));
+    echo $this->Form->input('description', array('placeholder' => 'e.g. Hydrotreater 1 & 2 Sidecuts'));
+    echo $this->Form->input('prefix', array('placeholder'=>'e.g. 36'));
     echo $this->Form->input('BusinessUnit');
 
     echo $this->Js->submit('Add Plant', array(
@@ -46,4 +57,6 @@
     echo $this->Form->end();
     ?>
 </div>
+
+
 

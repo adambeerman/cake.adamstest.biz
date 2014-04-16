@@ -55,6 +55,22 @@ class PlantsController extends AppController {
         }
     }# End of Method add
 
+    public function delete($id = NULL) {
+
+        # User not allowed to manually enter a post id to delete
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+
+        if ($this->Plant->delete($id)) {
+            $this->Session->setFlash(
+                __('The plant with id: %s has been deleted.',h($id))
+            );
+            return $this->redirect($this->referer());
+        }
+
+    } # End function "DELETE"
+
     public function profile($id = NULL) {
 
 
