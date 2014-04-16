@@ -19,5 +19,10 @@ $(document).ready(function() {
         $('.add_turnover').css("display", "none");
         $('.new_turnover').css('display', 'block');
     });
+
+    $('.delete').click(function() {
+        console.log("clicked delete!");
+        $(this).parent().hide();
+    })
 });
 

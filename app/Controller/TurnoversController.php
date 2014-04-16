@@ -133,6 +133,10 @@ class TurnoversController extends AppController {
 		if (!$this->Turnover->exists()) {
 			throw new NotFoundException(__('Invalid turnover'));
 		}
+        if ($this->request->is('ajax')){
+            $this->Turnover->delete();
+        }
+
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Turnover->delete()) {
 			$this->Session->setFlash(__('The turnover has been deleted.'));

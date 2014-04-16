@@ -44,7 +44,7 @@
 </div>
 
 <div class = 'plant'>
-    <h3>Plants</h3>
+    <h3><?php echo $this->Html->link('Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
 
     <!-- If user has Plant data, display it,
     Otherwise, allow them to add a new plant-->
@@ -60,7 +60,7 @@
 
     <!-- allow user to modify their plants -->
 
-    <?php //$this->Html->link('Edit Plants', array('controller'=> 'users', 'action' => 'plant_edit', AuthComponent::user('id'))); ?>
+    <?php $this->Html->link('Edit Plants', array('controller'=> 'users', 'action' => 'plant_edit', AuthComponent::user('id'))); ?>
 
     <br>
     <div class = "modify">

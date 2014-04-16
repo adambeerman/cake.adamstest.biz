@@ -10,10 +10,11 @@
             array('controller' => 'turnovers','action'=>'edit', $turnover['Turnover']['id'])
         );
         echo "<br />";
-        echo $this->Form->postLink(
+        /*echo $this->Form->postLink(
                     'Delete',
                     array('controller' => 'turnovers', 'action' => 'delete', $turnover['Turnover']['id'])
-                );
+                ); */
+        echo "<span class='delete'>Delete</span>";
     }
     else {
         // Otherwise, just echo the content

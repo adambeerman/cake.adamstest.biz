@@ -118,7 +118,7 @@ canvas {
     border: 1px dotted black;
 }
 
-.add_turnover {
+.add_turnover, .delete, #add_plant {
     cursor: pointer;
 }
 
