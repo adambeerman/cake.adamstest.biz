@@ -25,17 +25,18 @@
     ?>
 
     <br />
-
 <?php endforeach; ?>
-<br />
+
 
 <div id = "new_plant_placeholder"></div>
 <div id = "updating" style = "display: none">Adding Plant...</div>
 
+<br />
+
 <div id = "add_plant">Add Plant?</div>
 
 <div id ="new_plant" class = "hidden">
-    <span id = "hide" class = "faded">hide</span>
+    <span id = "hide" class = "faded">hide this form</span>
     <?php echo $this->Form->create('Plant',
         array(
             'default' => false,

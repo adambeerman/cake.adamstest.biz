@@ -11,9 +11,74 @@ class BusinessUnitsController extends AppController {
 
     var $scaffold = 'admin';
     public $helpers = array('Html', 'Form');
+    public $components = array('RequestHandler');
+
 
     public function index() {
-        $this->set('business_units', $this->BusinessUnit->find('all'));
 
-    }
+        // Just grab the basic plant information
+        $params = array(
+            'recursive' => -1
+        );
+
+        $this->set('business_units', $this->BusinessUnit->find('all', $params));
+        $refineries = $this->BusinessUnit->Refinery->find('list');
+        $this->set(compact('refineries'));
+
+    } # End of method index
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+
+        $this->autoRender = false;
+
+        // Following line is here until I can figure out how to appropriately link the models together. 
+        $this->request->data('BusinessUnit.refinery_id',$this->request->data('BusinessUnit.Refinery'));
+
+        if($this->request->is('post', 'ajax')) {
+            $this->BusinessUnit->create();
+            if ($this->BusinessUnit->save($this->request->data)) {
+                if($this->request->is('ajax')){
+                    $this->request->data('BusinessUnit.id', $this->BusinessUnit->id);
+                    $this->set('business_unit', $this->request->data);
+                    $this->render('success', 'ajax');
+                }
+                else {
+                    $this->Session->setFlash(__('The business unit has been created!'));
+                    $this->render('success', 'ajax');
+                    //return $this->redirect(array('controller' => 'turnover_groups', 'action' => 'view', $turnover_group_id));
+                }
+            }
+        }
+    }# End of Method add
+
+    public function delete($id = NULL) {
+
+        # User not allowed to manually enter a post id to delete
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+
+        if ($this->BusinessUnit->delete($id)) {
+            $this->Session->setFlash(
+                __('The business unit with id: %s has been deleted.',h($id))
+            );
+            return $this->redirect($this->referer());
+        }
+
+    } # End function "DELETE"
+
+    public function profile($id = NULL) {
+        $params = array(
+            'conditions' => array(
+                'BusinessUnit.id' => $id,
+            ),
+        );
+        $this->set('data', $this->BusinessUnit->find('first',$params));
+
+    } # End profile method
 }

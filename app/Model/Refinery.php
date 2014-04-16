@@ -10,6 +10,11 @@
 class Refinery extends AppModel {
 
     public $belongsTo = 'Company';
-    public $hasMany = array('BusinessUnit','TurnoverGroup','User');
+    public $hasMany = array(
+        'BusinessUnit' => array(
+            'className' => 'BusinessUnit',
+            'foreignKey' => 'refinery_id'
+        ),
+        'TurnoverGroup','User');
 
 }

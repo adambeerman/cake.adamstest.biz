@@ -12,7 +12,19 @@ class BusinessUnit extends AppModel {
     var $name = 'BusinessUnit';
     var $displayField = 'short_name';
 
-    public $hasMany = array('Plant', 'TurnoverGroup');
-    public $belongsTo = 'Refinery';
+    public $hasMany = array(
+        'Plant' => array(
+            'className' => 'Plant',
+            'foreignKey' => 'business_unit_id'
+        ),
+        'TurnoverGroup');
+
+
+    public $belongsTo = array(
+        'Refinery' => array(
+            'className' => 'Refinery',
+            'foreignKey' => 'refinery_id'
+        )
+    );
 
 }

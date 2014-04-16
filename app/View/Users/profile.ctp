@@ -43,8 +43,12 @@
     <br>
 </div>
 
+<h3><?php echo $this->Html->link('Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
+<h3><?php echo $this->Html->link('Business Units', array('controller'=>'business_units', 'action' => 'index'));?></h3>
+
 <div class = 'plant'>
-    <h3><?php echo $this->Html->link('Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
+    <h3>My Plants: </h3>
+
 
     <!-- If user has Plant data, display it,
     Otherwise, allow them to add a new plant-->

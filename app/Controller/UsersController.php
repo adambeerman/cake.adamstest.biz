@@ -279,8 +279,8 @@ class UsersController extends AppController {
         if(!$this->request->data) {
 
             // Find which business unit the User is a part of and only display those plants
-            $businessUnitInfo = $this->User->Plant->BusinessUnit->find('first', array('recursive' =>  0));
 
+            $businessUnitInfo = $this->User->Plant->BusinessUnit->find('first', array('recursive' =>  0));
             $params = array('conditions' => array('Plant.business_unit_id' =>  $businessUnitInfo['BusinessUnit']['id']));
             $plants = $this->User->Plant->find('list',$params);
             $this->set(compact('plants'));

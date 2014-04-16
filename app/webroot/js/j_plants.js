@@ -9,15 +9,15 @@
 
 $(document).ready(function() {
 
-    $('#add_plant').click(function(){
+    $('#add_plant, #add_business_unit').click(function(){
         console.log("success");
-        $('#add_plant').css("display", "none");
-        $('#new_plant').css('display', 'block');
+        $('#add_plant, #add_business_unit').css("display", "none");
+        $('#new_plant, #new_business_unit').css('display', 'block');
     });
 
     $('#hide').click(function() {
         console.log("hidden");
-        $('#add_plant').css("display", "block");
-        $('#new_plant').css("display", "none");
+        $('#add_plant, #add_business_unit').css("display", "block");
+        $('#new_plant, #new_business_unit').css("display", "none");
     })
 });

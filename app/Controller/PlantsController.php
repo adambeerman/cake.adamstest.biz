@@ -35,6 +35,10 @@ class PlantsController extends AppController {
 
         $this->autoRender = false;
 
+        // The following line is in place because I am unable to have the foreign key automatically link up the plant with business unit
+        $this->request->data('Plant.business_unit_id', $this->request->data('Plant.BusinessUnit'));
+
+        debug($this->request->data);
         if($this->request->is('post', 'ajax')) {
 
             $this->Plant->create();

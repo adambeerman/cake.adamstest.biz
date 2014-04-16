@@ -13,7 +13,13 @@ class Plant extends AppModel {
     var $displayField = 'short_name';
 
     public $hasMany = array('Equipment','Unit');
-    public $belongsTo = 'BusinessUnit';
+
+    public $belongsTo = array(
+        'BusinessUnit' => array(
+            'className' => 'BusinessUnit',
+            'foreignKey' => 'business_unit_id'
+        )
+    );
 
     public $hasAndBelongsToMany = array(
         'User' =>
