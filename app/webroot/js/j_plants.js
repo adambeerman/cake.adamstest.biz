@@ -15,4 +15,9 @@ $(document).ready(function() {
         $('#new_plant').css('display', 'block');
     });
 
+    $('#hide').click(function() {
+        console.log("hidden");
+        $('#add_plant').css("display", "block");
+        $('#new_plant').css("display", "none");
+    })
 });

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026e687f-2022-4876-a5f2-1f46bcceab01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Plants/add.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Plant.php" afterPath="$PROJECT_DIR$/app/Model/Plant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/PlantsController.php" afterPath="$PROJECT_DIR$/app/Controller/PlantsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Plants/index.ctp" afterPath="$PROJECT_DIR$/app/View/Plants/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/js/j_plants.js" afterPath="$PROJECT_DIR$/app/webroot/js/j_plants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/main.css" afterPath="$PROJECT_DIR$/app/webroot/css/main.css" />
     </list>
     <ignored path="cakephp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +20,7 @@
     <file path="$PROJECT_DIR$/../cakephp/lib/Cake/Test/Fixture/rss.xml" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394125778170" ignored="false" />
     <file path="/Post.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394415087770" ignored="false" />
     <file path="/PostsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394569274608" ignored="false" />
-    <file path="/index.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397670317414" ignored="false" />
+    <file path="/index.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397670777803" ignored="false" />
     <file path="/view.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397655862148" ignored="false" />
     <file path="/a.coffee" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162253371" ignored="false" />
     <file path="/a.feature" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162258338" ignored="false" />
@@ -45,7 +43,7 @@
     <file path="/CompaniesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396560755210" ignored="false" />
     <file path="/Company.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396562678781" ignored="false" />
     <file path="/Refinery.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395076421779" ignored="false" />
-    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397663774860" ignored="false" />
+    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397670853537" ignored="false" />
     <file path="/default.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397586331867" ignored="false" />
     <file path="/HeuristicsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487386918" ignored="false" />
     <file path="/Heuristic.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487360649" ignored="false" />
@@ -97,7 +95,7 @@
     <file path="/ajax.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397577879144" ignored="false" />
     <file path="/individual_turnover.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397654120104" ignored="false" />
     <file path="/turnover.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397661959651" ignored="false" />
-    <file path="/j_plants.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397669906631" ignored="false" />
+    <file path="/j_plants.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397670823716" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +115,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="1" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.5637584">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Plants/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="44" selection-start="612" selection-end="612" vertical-scroll-proportion="-4.2">
+            <state line="37" column="42" selection-start="912" selection-end="912" vertical-scroll-proportion="-2.24">
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -166,10 +173,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="j_plants.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="j_plants.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/js/j_plants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="7" selection-start="366" selection-end="366" vertical-scroll-proportion="0.30201343">
+            <state line="20" column="47" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#157#0" expanded="false" />
               </folding>
@@ -206,15 +213,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="success.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Plants/success.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="50" selection-start="136" selection-end="137" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -241,7 +239,6 @@
         <option value="$PROJECT_DIR$/app/View/Elements/turnover.ctp" />
         <option value="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
         <option value="$PROJECT_DIR$/app/View/Users/profile.ctp" />
-        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
         <option value="$PROJECT_DIR$/app/View/Plants/success.ctp" />
         <option value="$PROJECT_DIR$/app/View/Users/add.ctp" />
         <option value="$PROJECT_DIR$/app/View/Plants/add.ctp" />
@@ -249,6 +246,7 @@
         <option value="$PROJECT_DIR$/app/Controller/PlantsController.php" />
         <option value="$PROJECT_DIR$/app/View/Plants/index.ctp" />
         <option value="$PROJECT_DIR$/app/webroot/js/j_plants.js" />
+        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
       </list>
     </option>
   </component>
@@ -784,13 +782,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/View/Users/plant_edit.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="221" selection-end="236" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Turnovers/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -890,7 +881,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Plants/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="44" selection-start="612" selection-end="612" vertical-scroll-proportion="-4.2">
+        <state line="37" column="42" selection-start="912" selection-end="912" vertical-scroll-proportion="-2.24">
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
@@ -899,10 +890,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/webroot/js/j_plants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="7" selection-start="366" selection-end="366" vertical-scroll-proportion="0.30201343">
+        <state line="20" column="47" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#157#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="1" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.5637584">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -35,6 +35,7 @@
 <div id = "add_plant">Add Plant?</div>
 
 <div id ="new_plant" class = "hidden">
+    <span id = "hide" class = "faded">hide</span>
     <?php echo $this->Form->create('Plant',
         array(
             'default' => false,
