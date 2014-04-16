@@ -14,7 +14,7 @@ class TurnoversController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'RequestHandler');
 
 /**
  * index method
@@ -48,23 +48,38 @@ class TurnoversController extends AppController {
  */
 	public function add($turnover_group_id=null, $user_id = null) {
 
-        //debug($this->request->referer(false));
+        $this->autoRender = false;
 
-		if ($this->request->is('post')) {
+        if($this->request->is('post', 'ajax')) {
 
 			$this->Turnover->create();
             $this->request->data('Turnover.turnover_group_id', $turnover_group_id);
-            $this->request->data('Turnover.user_id', $user_id);
+
+            // Handle User ID, whether ot not it was passed to /turnovers/add
+            if($user_id == null){
+                $this->request->data('Turnover.user_id', $this->Auth->user('id'));
+            }
+            else {
+                $this->request->data('Turnover.user_id', $user_id);
+            }
 
             // Setting Turnover Index - However, what if this is already set and you are adding a past turnover?
             $this->request->data('Turnover.turnover_idx',
                 $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id')));
-			if ($this->Turnover->save($this->request->data)) {
-				$this->Session->setFlash(__('The turnover has been saved.'));
-				return $this->redirect(array('controller' => 'turnover_groups', 'action' => 'view', $turnover_group_id));
 
-			} else {
-				$this->Session->setFlash(__('The turnover could not be saved. Please, try again.'));
+			if ($this->Turnover->save($this->request->data)) {
+                if($this->request->is('ajax')){
+
+                    // Render the turnover element, while passing in the latest turnover information!
+                    $this->request->data('Turnover.id', $this->Turnover->id);
+                    $this->set('turnover', $this->request->data);
+                    $this->render('/Elements/turnover');
+                }
+                else {
+                    $this->Session->setFlash(__('The turnover has been saved.'));
+                    $this->render('success', 'ajax');
+                    //return $this->redirect(array('controller' => 'turnover_groups', 'action' => 'view', $turnover_group_id));
+                }
 			}
 		}
 
@@ -76,11 +91,8 @@ class TurnoversController extends AppController {
 		//$users = $this->Turnover->User->find('list');
 		$this->set(compact('turnoverGroups', 'users'));
 
-        // $idx = $this->Turnover->set_turnover_idx($this->request->data('Turnover.turnover_group_id'));
-        // $label = $this->Turnover->TurnoverGroup->get_shift_label()
 
-        }
-
+        }# End of Method add
 /**
  * edit method
  *

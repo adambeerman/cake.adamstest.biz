@@ -117,3 +117,15 @@ h2 a {
 canvas {
     border: 1px dotted black;
 }
+
+.add_turnover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+input, textarea {
+    width: auto;
+}

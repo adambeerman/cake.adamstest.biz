@@ -3,6 +3,15 @@
     Start times: <?php print_r($startTimes); ?>
 </pre>
 
+
+<?php
+
+// Use FALSE so that this loads in the head rather than the body
+echo $this->Html->script('jquery', FALSE);
+echo $this->Html->script('j_turnovers_add', FALSE);
+
+?>
+
 <h2>
     <?php echo $this->Html->link($turnoverGroup['TurnoverGroup']['name'], array(
         'controller' => 'turnover_groups', 'action' => 'view', $turnoverGroup['TurnoverGroup']['id'])
@@ -28,34 +37,51 @@
 <div class = "turnover_container">
     <?php foreach($turnovers as $turnover): ?>
 
-        <div class = "turnover sortable">
-            <?php // I want the user to be able to edit the turnover if they created it ?>
+        <?php // Call the turnover element, and pass in the turnover data ?>
+        <?php echo $this->element('turnover', array('turnover' => $turnover) ); ?>
 
-            <h4><?php echo $turnover['Turnover']['name']; ?></h4>
-
-            <?php if($turnover['Turnover']['user_id']==AuthComponent::user('id')) {
-                //If user owns this turnover, give them a link to modify it
-                echo $this->Html->link(
-                    $turnover['Turnover']['content'],
-                    array('controller' => 'turnovers','action'=>'edit', $turnover['Turnover']['id'])
-                );
-            }
-            else {
-                // Otherwise, just echo the content
-                echo $turnover['Turnover']['content'];
-            }
-
-            ?>
-        </div>
-
-        <br>
 
     <?php endforeach; ?>
 
-    <div class = "turnover">
-        <?php echo $this->Html->link(__('New Turnover'), array('controller' => 'turnovers', 'action' => 'add',
-            $turnoverGroup['TurnoverGroup']['id'], AuthComponent::user('id'))); ?>
-    </div>
-</div>
+    <div id = "turnover_placeholder">
 
+    </div>
+
+    <div id="updating" style="display: none;">
+        Adding Turnover...
+    </div>
+
+
+
+    <div class="add_turnover turnover">
+        [+] New Turnover
+    </div>
+
+    <div class="new_turnover turnover hidden">
+        <?php echo $this->Form->create('Turnover',
+            array(
+                'default' => false,
+                'type'=> 'post',
+            ));
+        ?>
+
+        <?php
+        echo $this->Form->input('name');
+        echo $this->Form->input('content', array('rows' => '3'));
+        echo $this->Js->submit('Add Turnover', array(
+            'url' => array('controller' => 'turnovers', 'action' => 'add', $turnoverGroup['TurnoverGroup']['id']),
+
+            'before' => $this->Js->get('#updating')->effect('fadeIn'),
+            'success' => $this->Js->get('#updating')->effect('fadeOut'),
+            'update' => '#turnover_placeholder',
+            //'div' => false,
+            //'type' => 'json',
+            //'async' => false,
+
+        ));
+        echo $this->Form->end();
+        ?>
+    </div>
+
+</div>
 

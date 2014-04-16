@@ -10,13 +10,17 @@ App::uses('CakeTime','Utility');
 class TurnoverGroupsController extends AppController {
 
     public $scaffold = 'admin';
+
+    // Load the Js helper (deprecated AJAX lives here)
     public $helpers = array('Time', 'Html', 'Js');
+
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator');
+    //Load Request Handler to be able to understand whether a request is ajax
+	public $components = array('Paginator', 'RequestHandler');
 
 /**
  * index method
@@ -211,5 +215,12 @@ class TurnoverGroupsController extends AppController {
         //$this->request->onlyAllow('post', 'delete');
 
         $this->set('turnovers',$this->TurnoverGroup->find('all'));
+    }
+
+    public function test($togroup = null) {
+
+        debug($togroup);
+        $this->render('success', 'ajax');
+
     }
 }

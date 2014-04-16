@@ -37,6 +37,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('script');
 
         echo $this->Html->script('jquery');
+
+        // This tells where to put any javascript generated
+        echo $this->Js->writeBuffer();
 	?>
 </head>
 <body>
