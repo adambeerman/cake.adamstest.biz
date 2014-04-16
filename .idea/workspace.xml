@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026e687f-2022-4876-a5f2-1f46bcceab01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Elements/turnover.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php" afterPath="$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/TurnoversController.php" afterPath="$PROJECT_DIR$/app/Controller/TurnoversController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Layouts/default.ctp" afterPath="$PROJECT_DIR$/app/View/Layouts/default.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/main.css" afterPath="$PROJECT_DIR$/app/webroot/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" afterPath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cakephp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +65,7 @@
     <file path="$PROJECT_DIR$/../p4.adamstest.biz/views/_v_template.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395066159675" ignored="false" />
     <file path="/core.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395066499212" ignored="false" />
     <file path="/Turnover.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396624507072" ignored="false" />
-    <file path="/TurnoversController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397657615439" ignored="false" />
+    <file path="/TurnoversController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397658548872" ignored="false" />
     <file path="/ShiftCyclesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395074007863" ignored="false" />
     <file path="/TurnoverGroup.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395952936837" ignored="false" />
     <file path="$PROJECT_DIR$/../p2.adamstest.biz/.htaccess" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1395082963873" ignored="false" />
@@ -150,10 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="turnover.ctp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="turnover.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Elements/turnover.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="6" selection-start="843" selection-end="843" vertical-scroll-proportion="0.85106385">
+            <state line="24" column="6" selection-start="843" selection-end="843" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
@@ -179,10 +172,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TurnoversController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TurnoversController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="101" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-4.68">
+            <state line="140" column="9" selection-start="4515" selection-end="4515" vertical-scroll-proportion="1.5859375">
               <folding />
             </state>
           </provider>
@@ -229,8 +222,8 @@
         <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
         <option value="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
         <option value="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
-        <option value="$PROJECT_DIR$/app/Controller/TurnoversController.php" />
         <option value="$PROJECT_DIR$/app/View/Elements/turnover.ctp" />
+        <option value="$PROJECT_DIR$/app/Controller/TurnoversController.php" />
       </list>
     </option>
   </component>
@@ -833,16 +826,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
+    <entry file="file://$PROJECT_DIR$/app/View/Elements/turnover.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="101" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-4.68">
+        <state line="24" column="6" selection-start="843" selection-end="843" vertical-scroll-proportion="-15.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Elements/turnover.ctp">
+    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="843" selection-end="843" vertical-scroll-proportion="0.85106385">
+        <state line="140" column="9" selection-start="4515" selection-end="4515" vertical-scroll-proportion="1.5859375">
           <folding />
         </state>
       </provider>
