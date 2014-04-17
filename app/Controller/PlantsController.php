@@ -15,13 +15,20 @@ class PlantsController extends AppController {
 
     public function index() {
 
-        // Just grab the basic plant information
-        $params = array(
-            'recursive' => -1
-        );
+        // Grab all Plants that belong to the same refinery as the user
 
-        $this->set('plants', $this->Plant->find('all', $params));
-        $businessUnits = $this->Plant->BusinessUnit->find('list');
+        $this->Plant->Behaviors->load('Containable');
+
+        $this->set('businessUnitsPlants',$this->Plant->BusinessUnit->find('all', array(
+            'conditions' => array(
+                'BusinessUnit.refinery_id' => $this->Auth->user('refinery_id')
+            ),
+            'contain' => 'Plant'
+        )));
+
+        // Information required when user adds a new plant -- Should maybe in an "add controller" ? //
+        $paramBusinessUnit['conditions'] = array('BusinessUnit.refinery_id' => $this->Auth->user('refinery_id'));
+        $businessUnits = $this->Plant->BusinessUnit->find('list', $paramBusinessUnit);
         $this->set(compact('businessUnits'));
 
     } # End of method index
@@ -34,9 +41,6 @@ class PlantsController extends AppController {
     public function add() {
 
         $this->autoRender = false;
-
-        // The following line is in place because I am unable to have the foreign key automatically link up the plant with business unit
-        $this->request->data('Plant.business_unit_id', $this->request->data('Plant.BusinessUnit'));
 
         debug($this->request->data);
         if($this->request->is('post', 'ajax')) {

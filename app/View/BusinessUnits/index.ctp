@@ -43,7 +43,7 @@
     echo $this->Form->input('name', array('placeholder' => 'e.g. Distillation & Reforming'));
     echo $this->Form->input('short_name', array('placeholder' => 'e.g. D&R'));
     echo $this->Form->input('description', array('placeholder' => 'e.g. Generic Description'));
-    echo $this->Form->input('Refinery');
+    echo $this->Form->input('refinery_id');
 
     echo $this->Js->submit('Add Business Unit', array(
         'url' => array('controller' => 'business_units', 'action' => 'add'),

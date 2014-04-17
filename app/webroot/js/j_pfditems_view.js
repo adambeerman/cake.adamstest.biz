@@ -97,5 +97,15 @@ $(document).ready(function() {
     context.lineWidth = 2;
 
     drawReactor();
-    drawColumn();
+
+    $('#add_stream_in').click(function() {
+       console.log("adding steam in");
+    });
+
+    $('#add_stream_out').click(function() {
+        console.log("adding stream out");
+
+
+
+    })
 });

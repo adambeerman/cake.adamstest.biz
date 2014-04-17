@@ -1,19 +1,16 @@
 <!-- Cake PHP Template -->
 
-<?php   // Load Relevant Javascript
-        //echo $this->Html->script('j_users_profile'); ?>
 
 <h2>Welcome,
     <?php echo AuthComponent::user('first_name'); ?>
 </h2>
 
+<h3><?php echo $this->Html->link('> edit Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
+<h3><?php echo $this->Html->link('> edit Business Units', array('controller'=>'business_units', 'action' => 'index'));?></h3>
 
-<pre>
-    <?php //print_r($userTOs); ?>
-</pre>
 
 <div class = "pfd">
-    <h3>PFDs</h3>
+    <h3>My PFDs</h3>
     <?php foreach($userPFDs as $PFD) {
         echo $this->Html->link($PFD['Pfd']['name'],
             array('controller' => 'pfds', 'action' => 'view', $PFD['Pfd']['id']));
@@ -32,19 +29,19 @@
         echo "<br>";
     }?>
 
-    <br>
+    <br />
+    <span class = "faded">
+        <?php echo $this->Html->link(
+            'New PFD',
+            array('controller' => 'pfds', 'action' => 'add')
+        );
+        ?>
+    </span>
 
-    <?php echo $this->Html->link(
-        'New PFD',
-        array('controller' => 'pfds', 'action' => 'add')
-    );
-    ?>
 
-    <br>
+    <br/>
+    <br/>
 </div>
-
-<h3><?php echo $this->Html->link('Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
-<h3><?php echo $this->Html->link('Business Units', array('controller'=>'business_units', 'action' => 'index'));?></h3>
 
 <div class = 'plant'>
     <h3>My Plants: </h3>

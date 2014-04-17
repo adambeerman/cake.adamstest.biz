@@ -100,7 +100,7 @@ class PfdConnection extends AppModel {
  */
 	public $belongsTo = array(
 		'Pfds' => array(
-			'className' => 'Pfds',
+			'className' => 'Pfd',
 			'foreignKey' => 'pfd_id',
 			'conditions' => '',
 			'fields' => '',

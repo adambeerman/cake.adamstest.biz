@@ -1,7 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
 /**
- * Pfds Controller
+ * Pfd Controller
  *
  * @property Pfd $Pfd
  * @property PaginatorComponent $Paginator

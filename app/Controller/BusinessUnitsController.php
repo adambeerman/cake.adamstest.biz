@@ -17,12 +17,24 @@ class BusinessUnitsController extends AppController {
     public function index() {
 
         // Just grab the basic plant information
+
+
+        // Want to only grab business units that belong to my refinery
         $params = array(
-            'recursive' => -1
+            'recursive' => -1,
+            'conditions' => array(
+                'BusinessUnit.refinery_id' => $this->Auth->user('refinery_id')
+            )
+        );
+
+        $refineryParam = array(
+            'conditions' => array(
+                'Refinery.company_id' => $this->Auth->user('company_id')
+            )
         );
 
         $this->set('business_units', $this->BusinessUnit->find('all', $params));
-        $refineries = $this->BusinessUnit->Refinery->find('list');
+        $refineries = $this->BusinessUnit->Refinery->find('list', $refineryParam);
         $this->set(compact('refineries'));
 
     } # End of method index
@@ -35,9 +47,6 @@ class BusinessUnitsController extends AppController {
     public function add() {
 
         $this->autoRender = false;
-
-        // Following line is here until I can figure out how to appropriately link the models together. 
-        $this->request->data('BusinessUnit.refinery_id',$this->request->data('BusinessUnit.Refinery'));
 
         if($this->request->is('post', 'ajax')) {
             $this->BusinessUnit->create();

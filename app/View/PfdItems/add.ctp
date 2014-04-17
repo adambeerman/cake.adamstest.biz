@@ -9,6 +9,7 @@
         echo $this->Form->input('name', array('placeholder' => 'e.g. R-610'));
         echo $this->Form->input('description', array('placeholder' => 'e.g. DHT Reactor'));
 
+        // Ignoring the plant for now.
         //echo $this->Form->input('plant_id');
         //echo $this->Form->input('content', array('rows' => '3'));
         ?>

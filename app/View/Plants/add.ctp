@@ -9,7 +9,7 @@ ADD VIEW
     echo $this->Form->input('short_name');
     echo $this->Form->input('description');
     echo $this->Form->input('prefix');
-    echo $this->Form->input('BusinessUnit');
+    echo $this->Form->input('business_unit_id');
 
     echo $this->Js->submit('Add Plant', array(
         'url' => array('controller' => 'plants', 'action' => 'add'),

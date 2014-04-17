@@ -51,6 +51,20 @@ class PfdItemsController extends AppController {
 		$options = array('conditions' => array('PfdItem.' . $this->PfdItem->primaryKey => $id));
 		$this->set('pfdItem', $this->PfdItem->find('first', $options));
 
+        $optionA = array(
+            'conditions' => array(
+                'PfdConnectionA.a_id' => $id
+            )
+        );
+
+        $optionB = array(
+            'conditions' => array(
+                'PfdConnectionB.b_id' => $id
+            )
+        );
+
+        $this->set('pfdConnectionsA', $this->PfdItem->PfdConnectionA->find('all', $optionA));
+        $this->set('pfdConnectionsB', $this->PfdItem->PfdConnectionB->find('all', $optionB));
 
 	}
 
@@ -59,7 +73,7 @@ class PfdItemsController extends AppController {
  *
  * @return void
  */
-	public function add($pfd_id = null) {
+	public function add($pfd_id = null, $ab_flag = null) {
 		if ($this->request->is('post')) {
 			$this->PfdItem->create();
             $this->request->data('PfdItem.pfd_id', $pfd_id);
@@ -70,6 +84,7 @@ class PfdItemsController extends AppController {
 				$this->Session->setFlash(__('The pfd item could not be saved. Please, try again.'));
 			}
 		}
+
 		$pfds = $this->PfdItem->find('list');
 		//$this->set(compact('pfds'));
 	}

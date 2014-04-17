@@ -100,6 +100,11 @@ h2 a {
  font-weight: normal;
 }
 
+h3 a {
+    font-weight: normal;
+
+}
+
 .graphic_reactor {
 
     outline-color: black;
@@ -116,6 +121,7 @@ h2 a {
 }
 canvas {
     border: 1px dotted black;
+    margin: 0 auto;
 }
 
 .add_turnover, .delete, #add_plant, #hide {
