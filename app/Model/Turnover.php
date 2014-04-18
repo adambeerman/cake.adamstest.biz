@@ -15,7 +15,7 @@ class Turnover extends AppModel {
  *
  * @var string
  */
-	public $useDbConfig = 'test';
+	public $useDbConfig = 'default';
 
 /**
  * Display field

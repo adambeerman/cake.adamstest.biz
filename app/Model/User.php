@@ -12,7 +12,7 @@ class User extends AppModel {
  *
  * @var string
  */
-	public $useDbConfig = 'test';
+	public $useDbConfig = 'default';
 
     public $hasMany = array(
         'Turnover', 'Pfd'
