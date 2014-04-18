@@ -2,6 +2,7 @@
 
 #content {
     padding: 0;
+    background: white;
 }
 .company_logo {
     max-width: 100px;
@@ -25,6 +26,7 @@
     opacity: .75;
     height: 150px;
     color: white;
+    z-index: 3;
 }
 
 #header a {
@@ -86,9 +88,6 @@
 body {
     background: white;
     color: black;
-}
-#content {
-    background: white;
 }
 
 #pfd_builder {

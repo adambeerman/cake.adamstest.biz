@@ -168,7 +168,8 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirectUrl());
+                return $this->redirect(array("controller" => "users", "action" => "profile"));
+                //return $this->redirect($this->Auth->redirectUrl());
                 // Prior to 2.3 use
                 // `return $this->redirect($this->Auth->redirect());`
             } else {
