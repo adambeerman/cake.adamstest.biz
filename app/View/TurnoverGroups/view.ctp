@@ -51,7 +51,7 @@ echo $this->Html->script('j_turnovers_add', FALSE);
         [+] New Turnover
     </div>
 
-    <div class="new_turnover turnover hidden">
+    <div class="new_turnover turnover hidden_form">
         <?php echo $this->Form->create('Turnover',
             array(
                 'default' => false,

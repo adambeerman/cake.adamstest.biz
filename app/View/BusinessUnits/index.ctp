@@ -32,7 +32,7 @@
 
 <div id = "add_plant">Add Business Unit?</div>
 
-<div id ="new_business_unit" class = "hidden">
+<div id ="new_business_unit" class = "hidden_form">
     <span id = "hide" class = "faded">hide this form</span>
     <?php echo $this->Form->create('BusinessUnit',
         array(
