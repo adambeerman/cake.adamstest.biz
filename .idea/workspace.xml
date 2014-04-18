@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="026e687f-2022-4876-a5f2-1f46bcceab01" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Config/core.php" afterPath="$PROJECT_DIR$/app/Config/core.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Layouts/default.ctp" afterPath="$PROJECT_DIR$/app/View/Layouts/default.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/BusinessUnits/index.ctp" afterPath="$PROJECT_DIR$/app/View/BusinessUnits/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Plants/index.ctp" afterPath="$PROJECT_DIR$/app/View/Plants/index.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" afterPath="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/main.css" afterPath="$PROJECT_DIR$/app/webroot/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Elements/turnover.ctp" afterPath="$PROJECT_DIR$/app/View/Elements/turnover.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" afterPath="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
     </list>
     <ignored path="cakephp.iws" />
@@ -25,7 +22,7 @@
     <file path="/Post.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394415087770" ignored="false" />
     <file path="/PostsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394569274608" ignored="false" />
     <file path="/index.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397850542291" ignored="false" />
-    <file path="/view.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397850299617" ignored="false" />
+    <file path="/view.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397851827206" ignored="false" />
     <file path="/a.coffee" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162253371" ignored="false" />
     <file path="/a.feature" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394162258338" ignored="false" />
     <file path="/add.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397699133499" ignored="false" />
@@ -47,7 +44,7 @@
     <file path="/CompaniesController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396560755210" ignored="false" />
     <file path="/Company.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396562678781" ignored="false" />
     <file path="/Refinery.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397678005287" ignored="false" />
-    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397850472584" ignored="false" />
+    <file path="/main.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397851393850" ignored="false" />
     <file path="/default.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397843275780" ignored="false" />
     <file path="/HeuristicsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487386918" ignored="false" />
     <file path="/Heuristic.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1394487360649" ignored="false" />
@@ -94,11 +91,11 @@
     <file path="/cake.generic.css" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1396807507999" ignored="false" />
     <file path="/PfdItemsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397699214358" ignored="false" />
     <file path="/j_pfditems_view.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397681394963" ignored="false" />
-    <file path="/j_turnovers_add.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397850193783" ignored="false" />
+    <file path="/j_turnovers_add.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397851536879" ignored="false" />
     <file path="/success.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397672736942" ignored="false" />
     <file path="/ajax.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397577879144" ignored="false" />
     <file path="/individual_turnover.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397654120104" ignored="false" />
-    <file path="/turnover.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397661959651" ignored="false" />
+    <file path="/turnover.ctp" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397851995675" ignored="false" />
     <file path="/j_plants.js" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397672343057" ignored="false" />
     <file path="/PfdConnectionsController.php" changelist="026e687f-2022-4876-a5f2-1f46bcceab01" time="1397686851083" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -123,7 +120,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="6" selection-start="2614" selection-end="2614" vertical-scroll-proportion="-9.846154">
+            <state line="162" column="1" selection-start="2661" selection-end="2661" vertical-scroll-proportion="-8.115385">
               <folding />
             </state>
           </provider>
@@ -138,22 +135,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ctp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/BusinessUnits/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="48" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.40806046">
+            <state line="36" column="36" selection-start="1060" selection-end="1060" vertical-scroll-proportion="-3.24">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Config/core.php">
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/webroot/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="27" selection-start="822" selection-end="826" vertical-scroll-proportion="-2.94">
-              <folding>
-                <element signature="e#6#721#0" expanded="true" />
-              </folding>
+            <state line="1859" column="19" selection-start="33456" selection-end="33461" vertical-scroll-proportion="-5.230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cake.generic.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/webroot/css/cake.generic.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="504" column="19" selection-start="9468" selection-end="9468" vertical-scroll-proportion="-2.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TurnoversController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="37.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="turnover.ctp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/View/Elements/turnover.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="48" selection-start="889" selection-end="889" vertical-scroll-proportion="0.7092199">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TurnoverGroupsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,17 +192,10 @@
       <file leaf-file-name="view.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="44" selection-start="1367" selection-end="1373" vertical-scroll-proportion="-0.73417723">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.ctp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="55" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-10.625">
-              <folding />
+            <state line="43" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="-7.04">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,36 +203,7 @@
       <file leaf-file-name="j_turnovers_add.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="28" selection-start="718" selection-end="721" vertical-scroll-proportion="-12.846154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="j_users_add.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/webroot/js/j_users_add.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="j_pfditems_view.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/webroot/js/j_pfditems_view.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="j_plants.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/webroot/js/j_plants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="27" selection-start="483" selection-end="489" vertical-scroll-proportion="-10.384615">
+            <state line="25" column="51" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -232,7 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/View/TurnoverGroups/index.ctp" />
         <option value="$PROJECT_DIR$/app/View/Users/profile.ctp" />
         <option value="$PROJECT_DIR$/app/Model/Turnover.php" />
         <option value="$PROJECT_DIR$/app/Model/User.php" />
@@ -242,12 +236,13 @@
         <option value="$PROJECT_DIR$/app/Model/PfdConnection.php" />
         <option value="$PROJECT_DIR$/app/Model/Pfd.php" />
         <option value="$PROJECT_DIR$/app/Config/core.php" />
-        <option value="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
         <option value="$PROJECT_DIR$/app/View/Layouts/default.ctp" />
-        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
-        <option value="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
         <option value="$PROJECT_DIR$/app/View/Plants/index.ctp" />
         <option value="$PROJECT_DIR$/app/View/BusinessUnits/index.ctp" />
+        <option value="$PROJECT_DIR$/app/webroot/css/main.css" />
+        <option value="$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js" />
+        <option value="$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp" />
+        <option value="$PROJECT_DIR$/app/View/Elements/turnover.ctp" />
       </list>
     </option>
   </component>
@@ -535,6 +530,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Elements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cake.adamstest.biz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="BusinessUnits" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -719,41 +736,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/Pfd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="34" selection-start="294" selection-end="294" vertical-scroll-proportion="-10.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Heuristic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Equipment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/BusinessUnit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/AppModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -773,20 +755,6 @@
     <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="55" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-10.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="6" selection-start="2614" selection-end="2614" vertical-scroll-proportion="-9.846154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="28" selection-start="718" selection-end="721" vertical-scroll-proportion="-12.846154">
           <folding />
         </state>
       </provider>
@@ -814,9 +782,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp">
+    <entry file="file://$PROJECT_DIR$/app/View/BusinessUnits/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="44" selection-start="1367" selection-end="1373" vertical-scroll-proportion="-0.73417723">
+        <state line="36" column="36" selection-start="1060" selection-end="1060" vertical-scroll-proportion="-3.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1859" column="19" selection-start="33456" selection-end="33461" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/cake.generic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="504" column="19" selection-start="9468" selection-end="9468" vertical-scroll-proportion="-2.5">
           <folding />
         </state>
       </provider>
@@ -828,9 +810,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/BusinessUnits/index.ctp">
+    <entry file="file://$PROJECT_DIR$/app/webroot/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="48" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.40806046">
+        <state line="162" column="1" selection-start="2661" selection-end="2661" vertical-scroll-proportion="-8.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/js/j_turnovers_add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="51" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoverGroupsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/TurnoversController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="37.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/TurnoverGroups/view.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="-7.04">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Elements/turnover.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="48" selection-start="889" selection-end="889" vertical-scroll-proportion="0.7092199">
           <folding />
         </state>
       </provider>

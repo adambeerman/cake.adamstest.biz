@@ -30,11 +30,7 @@ echo $this->Html->script('j_turnovers_add', FALSE);
 
 <div class = "turnover_container">
     <?php foreach($turnovers as $turnover): ?>
-
-        <?php // Call the turnover element, and pass in the turnover data ?>
         <?php echo $this->element('turnover', array('turnover' => $turnover) ); ?>
-
-
     <?php endforeach; ?>
 
     <div id = "turnover_placeholder">
@@ -64,10 +60,10 @@ echo $this->Html->script('j_turnovers_add', FALSE);
         echo $this->Form->input('content', array('rows' => '3'));
         echo $this->Js->submit('Add Turnover', array(
             'url' => array('controller' => 'turnovers', 'action' => 'add', $turnoverGroup['TurnoverGroup']['id']),
-
             'before' => $this->Js->get('#updating')->effect('fadeIn'),
             'success' => $this->Js->get('#updating')->effect('fadeOut'),
             'update' => '#turnover_placeholder',
+            'id' => 'new_turnover_submit'
             //'div' => false,
             //'type' => 'json',
             //'async' => false,

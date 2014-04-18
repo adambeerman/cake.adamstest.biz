@@ -1,4 +1,4 @@
-e/**
+/**
  * Created with JetBrains PhpStorm.
  * User: adam
  * Date: 4/15/14
@@ -18,6 +18,13 @@ $(document).ready(function() {
         console.log('clicked');
         $('.add_turnover').css("display", "none");
         $('.new_turnover').css('display', 'block');
+    });
+
+
+    $('#new_turnover_submit').click(function() {
+        console.log("submitted?");
+        $('.add_turnover').css("display", "block");
+        $('.new_turnover').css("display", "none")
     });
 
     $('.delete').click(function() {
