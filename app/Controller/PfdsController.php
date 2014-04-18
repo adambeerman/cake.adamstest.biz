@@ -22,7 +22,8 @@ class PfdsController extends AppController {
  */
 	public function index() {
 		$this->Pfd->recursive = 0;
-		$this->set('pfds', $this->Paginator->paginate());
+		//$this->set('pfds', $this->Paginator->paginate());
+        $this->set('userPFDs', $this->Pfd->find('all', array('conditions' => array('Pfd.user_id' => $this->Auth->user('id')))));
 	}
 
 /**

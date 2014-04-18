@@ -224,16 +224,6 @@ class UsersController extends AppController {
         );
         $this->set('data',$this->User->find('first',$params));
 
-        $paramsTOs = array(
-            'conditions' => array(
-                'Turnover.user_id' => $this->Auth->user('id')
-            ),
-            'order' => array(
-                'Turnover.created' => 'DESC'
-            ),
-            'limit' => 5,
-        );
-
         $paramsTOGroups = array(
             'conditions' => array(
                 'TurnoverGroup.business_unit_id' => $this->Auth->user('business_unit_id')
@@ -241,12 +231,7 @@ class UsersController extends AppController {
             'recursive' => -1,
         );
         $this->set('refineryInfo',$this->User->Plant->BusinessUnit->Refinery->find('first', array('recursive' =>  0)));
-        $this->set('userTOs', $this->User->Turnover->find('all', $paramsTOs));
         $this->set('userTOGroups', $this->User->Turnover->TurnoverGroup->find('all', $paramsTOGroups));
-        $this->set('userPFDs', $this->User->Pfd->find('all', array('conditions' => array('Pfd.user_id' => $this->Auth->user('id')))));
-        //$this->loadModel('TurnoverGroup');
-
-        //Find the turnover group id's that this belongs to. :
 
 
 

@@ -1,47 +1,78 @@
-<!-- Cake PHP Template -->
+
+<div class = "header">
+    PLANT PAL
+</div>
 
 
+<!--
+Need to show:
+history,
+turnovers,
+strategy,
+equipment,
+pfds,
+notes/ideas,
+plants/businessUnits
+
+-->
 <h2>Welcome,
     <?php echo AuthComponent::user('first_name'); ?>
 </h2>
 
-<h3><?php echo $this->Html->link('> edit Plants', array('controller'=>'plants', 'action' => 'index'));?></h3>
-<h3><?php echo $this->Html->link('> edit Business Units', array('controller'=>'business_units', 'action' => 'index'));?></h3>
+<br />
+<div class = "container-fluid ">
+    <div class = "row">
+        <div class = "square col-xs-3"
+             style = "background-image: url('https://cdn1.iconfinder.com/data/icons/ios7-line/512/Timetable.png')">
+            History
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3"
+            style = "background-image: url('http://4vector.com/i/free-vector-three-circular-interlocking-arrows_101013_Three_Circular_Interlocking_Arrows.png')">
+            <?php echo $this->Html->link('Turnovers', array('controller' => 'turnover_groups', 'action' => 'index')); ?>
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3">
+            Strategy
+        </div>
 
+    </div>
+    <div class = "row">
+        <div class = "square col-xs-3">
+            Equipment
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3">
+            <?php echo $this->Html->link('PFDs', array('controller' => 'pfds', 'action' => 'index')); ?>
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3">
+            Notes/Ideas
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "square col-xs-3">
+            <?php echo $this->Html->link('Plants', array('controller'=>'plants', 'action' => 'index'));?>
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3">
+            <?php echo $this->Html->link('Business Units', array('controller'=>'business_units', 'action' => 'index'));?>
+        </div>
+        <div class = "square col-xs-offset-1 col-xs-3">
+            Other
+        </div>
+    </div>
 
-<div class = "pfd">
-    <h3>My PFDs</h3>
-    <?php foreach($userPFDs as $PFD) {
-        echo $this->Html->link($PFD['Pfd']['name'],
-            array('controller' => 'pfds', 'action' => 'view', $PFD['Pfd']['id']));
-
-        echo "<span class='faded'>";
-        echo " | ";
-        echo $this->Html->link('edit',
-            array('controller' => 'pfds', 'action' => 'build', $PFD['Pfd']['id']));
-        echo " | ";
-        echo $this->Form->postLink(
-            'delete',
-            array('controller' => 'pfds', 'action' => 'delete', $PFD['Pfd']['id']),
-            array('confirm'=> 'Are you sure?')
-        );
-        echo "</span>";
-        echo "<br>";
-    }?>
-
-    <br />
-    <span class = "faded">
-        <?php echo $this->Html->link(
-            'New PFD',
-            array('controller' => 'pfds', 'action' => 'add')
-        );
-        ?>
-    </span>
-
-
-    <br/>
-    <br/>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class = 'plant'>
     <h3>My Plants: </h3>
@@ -97,29 +128,3 @@
 </div>
 <br>
 
-<div>
-    <h3>My Turnovers</h3>
-    <?php foreach($userTOs as $turnover) {
-        echo $this->Time->format($turnover['Turnover']['created'], '%m/%d')." - ".
-        $this->Html->link($turnover['Turnover']['name'],
-            array('controller' => 'turnover_groups', 'action' => 'view',
-                $turnover['Turnover']['turnover_group_id'],$turnover['Turnover']['turnover_idx']));
-    echo "<br>";
-    }
-    ?>
-
-</div>
-<br>
-
-<div class = 'turnover_group'>
-    <h3>Turnovers in my Business Unit</h3>
-    <?php foreach($userTOGroups as $TOGroup) {
-        echo $this->Html->link($TOGroup['TurnoverGroup']['name'],array(
-            'controller' => 'turnover_groups', 'action' => 'view',
-            $TOGroup['TurnoverGroup']['id'])
-        );
-        echo "<br>";
-    }
-
-    ?>
-</div>

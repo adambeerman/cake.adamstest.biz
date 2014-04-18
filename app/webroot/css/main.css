@@ -5,6 +5,29 @@
     max-height: 100px;
 }
 
+ .square {
+     text-align: center;
+     height: 100px;
+     padding-top: 80px;
+     margin-left: 10px;
+     margin-bottom: 20px;
+     background: darkgray;
+     color: white;
+     background-size: cover;
+     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+ }
+ .header {
+     background: url('https://s3-eu-west-1.amazonaws.com/rbi-blogs/wp-content/uploads/mt/icisweb/blogs/asian-chemical-connections/refinery.jpg');
+     background-size: cover;
+     background-position: 50%;
+     opacity: .75;
+     height: 150px;
+     color: white;
+ }
+ .header img {
+     background-size: cover;
+ }
+
 #header ul {
     position: relative;
     float: left;

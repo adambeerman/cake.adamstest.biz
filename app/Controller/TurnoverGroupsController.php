@@ -40,8 +40,11 @@ class TurnoverGroupsController extends AppController {
         $this->set('userInfo', $this->TurnoverGroup->Turnover->User->find('first', $paramUser));
 
         // Find My Turnovers
-        $paramMine = array('conditions' => array('Turnover.user_id' =>  $this->Auth->user('id')),
-            'recursive' => -1);
+        $paramMine = array(
+            'conditions' => array('Turnover.user_id' =>  $this->Auth->user('id')),
+            'recursive' => -1,
+            'limit' => 10,
+        );
         $this->set('myTOs', $this->TurnoverGroup->Turnover->find('all', $paramMine));
 
         // Find Business Unit Turnover

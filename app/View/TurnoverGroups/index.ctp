@@ -28,13 +28,18 @@
 
 <!-- Business Unit Turnovers -->
 <br>
-<h3>Business Unit Turnovers</h3>
-<?php foreach($businessUnitTOs as $buTO) {
-    //print_r($buTO);
+<div class = 'turnover_group'>
+    <h3>Turnovers in my Business Unit</h3>
+    <?php foreach($businessUnitTOs as $buTO) {
+        echo $this->Html->link($buTO['TurnoverGroup']['name'],array(
+                'controller' => 'turnover_groups', 'action' => 'view',
+                $buTO['TurnoverGroup']['id'])
+        );
+        echo "<br>";
+    }
 
-    echo $buTO['TurnoverGroup']['name'];
-    echo "<br>";
-}?>
+    ?>
+</div>
 
 <!-- Loop through MyTurnovers -->
 <br>
