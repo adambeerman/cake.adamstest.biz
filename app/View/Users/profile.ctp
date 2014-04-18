@@ -1,9 +1,4 @@
 
-<div class = "header">
-    PLANT PAL
-</div>
-
-
 <!--
 Need to show:
 history,
@@ -90,10 +85,7 @@ plants/businessUnits
         <br>
     <?php endforeach; ?>
 
-    <!-- allow user to modify their plants -->
-
-    <?php $this->Html->link('Edit Plants', array('controller'=> 'users', 'action' => 'plant_edit', AuthComponent::user('id'))); ?>
-
+    <!-- allow user to modify his/her plants -->
     <br>
     <div class = "modify">
         <?php echo $this->Html->link(
@@ -101,30 +93,6 @@ plants/businessUnits
             array('action' => 'plant_edit', $data['User']['id'])); ?>
 
     </div>
-
-
-
-
-    <!-- This will be to test Ajax!
-    <p id = "modify_plants">Click here to test AJAX - plant modification</p>
-
-    -->
-
-    <?php
-    //on button click sends request to controller and displays response data in chosen field
-    $this->Js->get('#modify_plants')->event(
-        'click', $this->Js->request(
-            array('controller' => 'users', 'action' => 'profile', AuthComponent::user('id')), array(
-                'update' => '#new_plants',
-                'async' => true,
-            )
-        )
-    );
-
-    ?>
-
-
-    <div id = "new_plants"></div>
 </div>
 <br>
 

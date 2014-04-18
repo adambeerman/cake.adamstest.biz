@@ -1,3 +1,5 @@
+<br />
+
 <div class = "pfd">
     <h3>My PFDs</h3>
     <?php foreach($userPFDs as $PFD) {
@@ -30,4 +32,9 @@
 
     <br/>
     <br/>
+</div>
+
+<br />
+<div class = "pfd">
+    <h3>Official PFDs</h3>
 </div>

@@ -1,8 +1,52 @@
 <!-- Cake PHP Template -->
 
-<!-- Turnover Group Profile -->
+<?php echo $this->Html->script('bootstrap'); ?>
 
+<br />
 <h2>Turnovers</h2>
+
+<div class = "btn-group">
+    <button type="button" class = "btn btn-default">
+        Refinery
+    </button>
+    <button type="button" class = "btn btn-default">
+        Business Unit
+    </button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Word
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <?php foreach($businessUnitTOs as $buTO) {
+                echo "<li>";
+                echo $this->Html->link($buTO['TurnoverGroup']['name'],array(
+                        'controller' => 'turnover_groups', 'action' => 'view',
+                        $buTO['TurnoverGroup']['id'])
+                );
+                echo "</li>";
+            }
+            ?>
+        </ul>
+    </div>
+
+</div>
+
+<div class = 'turnover_group'>
+    <div class = "btn-group">
+
+    </div>
+    <h3>Turnovers in my Business Unit</h3>
+    <?php foreach($businessUnitTOs as $buTO) {
+        echo $this->Html->link($buTO['TurnoverGroup']['name'],array(
+                'controller' => 'turnover_groups', 'action' => 'view',
+                $buTO['TurnoverGroup']['id'])
+        );
+        echo "<br>";
+    }
+
+    ?>
+</div>
 
 <!-- Create a toggle to change between Refinery / Business Unit / Plant Turnovers -->
 
@@ -28,18 +72,7 @@
 
 <!-- Business Unit Turnovers -->
 <br>
-<div class = 'turnover_group'>
-    <h3>Turnovers in my Business Unit</h3>
-    <?php foreach($businessUnitTOs as $buTO) {
-        echo $this->Html->link($buTO['TurnoverGroup']['name'],array(
-                'controller' => 'turnover_groups', 'action' => 'view',
-                $buTO['TurnoverGroup']['id'])
-        );
-        echo "<br>";
-    }
 
-    ?>
-</div>
 
 <!-- Loop through MyTurnovers -->
 <br>

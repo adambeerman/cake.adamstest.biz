@@ -1,5 +1,8 @@
  /* Main Configuration file for CSS */
 
+#content {
+    padding: 10px;
+}
 .company_logo {
     max-width: 100px;
     max-height: 100px;
@@ -9,21 +12,26 @@
      text-align: center;
      height: 100px;
      padding-top: 80px;
-     margin-left: 10px;
      margin-bottom: 20px;
      background: darkgray;
      color: white;
      background-size: cover;
      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
  }
- .header {
-     background: url('https://s3-eu-west-1.amazonaws.com/rbi-blogs/wp-content/uploads/mt/icisweb/blogs/asian-chemical-connections/refinery.jpg');
-     background-size: cover;
-     background-position: 50%;
-     opacity: .75;
-     height: 150px;
-     color: white;
- }
+#header {
+    background: url('https://s3-eu-west-1.amazonaws.com/rbi-blogs/wp-content/uploads/mt/icisweb/blogs/asian-chemical-connections/refinery.jpg');
+    background-size: cover;
+    background-position: 50%;
+    opacity: .75;
+    height: 150px;
+    color: white;
+}
+
+#header a {
+    text-decoration: none;
+    color: white;
+    float: left;
+}
  .header img {
      background-size: cover;
  }
@@ -52,7 +60,8 @@
 
 .turnover {
     /*border: 1px solid black;*/
-    width: 40%;
+    width: 80%;
+    margin: 0 auto;
     clear: left;
     position: relative;
     background: lightgray;
@@ -73,11 +82,6 @@
 
 .faded, .faded a {
     color: gray;
-}
-
-#header a, #footer a {
-    color: black;
-    float: left;
 }
 
 body {

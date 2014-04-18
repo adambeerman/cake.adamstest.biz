@@ -27,7 +27,7 @@ class TurnoverGroupsController extends AppController {
  *
  * @return void
  */
-	public function index($hist = NULL) {
+	public function index() {
 		$this->TurnoverGroup->recursive = 0;
         $this->set('turnoverGroups', $this->TurnoverGroup->find('all'));
 		//$this->set('turnoverGroups', $this->Paginator->paginate());

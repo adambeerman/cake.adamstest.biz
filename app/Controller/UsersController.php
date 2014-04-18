@@ -192,14 +192,13 @@ class UsersController extends AppController {
         }*/
 
         //Gather User Information
-        $user = $this->User->findById($this->Auth->user('id'));
-        $this->set('userData', $user);
-        $this->set('title_for_layout', "USER TITLE");
+        //$user = $this->User->findById($this->Auth->user('id'));
+        //$this->set('userData', $user);
+        //$this->set('title_for_layout', "USER TITLE");
 
 
         // If a user is new, and has "0" for their company, refinery, and plants, we need to go through a welcome process
 
-        // [TO DO]
 
         // Handle an ajax request
         if($this->request->is('ajax')) {
@@ -220,11 +219,11 @@ class UsersController extends AppController {
             'conditions' => array(
                 'User.id' => $this->Auth->user('id')
             ),
-            'recursive' => 3,
+
         );
         $this->set('data',$this->User->find('first',$params));
 
-        $paramsTOGroups = array(
+        /*$paramsTOGroups = array(
             'conditions' => array(
                 'TurnoverGroup.business_unit_id' => $this->Auth->user('business_unit_id')
             ),
@@ -232,7 +231,7 @@ class UsersController extends AppController {
         );
         $this->set('refineryInfo',$this->User->Plant->BusinessUnit->Refinery->find('first', array('recursive' =>  0)));
         $this->set('userTOGroups', $this->User->Turnover->TurnoverGroup->find('all', $paramsTOGroups));
-
+        */
 
 
     }

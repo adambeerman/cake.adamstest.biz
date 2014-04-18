@@ -1,9 +1,3 @@
-<pre>
-    Current: <?php print_r($currentTime); ?>
-    Start times: <?php print_r($startTimes); ?>
-</pre>
-
-
 <?php
 
 // Use FALSE so that this loads in the head rather than the body
@@ -11,7 +5,7 @@ echo $this->Html->script('jquery', FALSE);
 echo $this->Html->script('j_turnovers_add', FALSE);
 
 ?>
-
+<br />
 <h2>
     <?php echo $this->Html->link($turnoverGroup['TurnoverGroup']['name'], array(
         'controller' => 'turnover_groups', 'action' => 'view', $turnoverGroup['TurnoverGroup']['id'])
