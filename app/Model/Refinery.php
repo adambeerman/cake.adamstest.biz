@@ -15,6 +15,10 @@ class Refinery extends AppModel {
             'className' => 'BusinessUnit',
             'foreignKey' => 'refinery_id'
         ),
-        'TurnoverGroup','User');
+        'TurnoverGroup',
+        'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'refinery_id'
+        ));
 
 }

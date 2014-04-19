@@ -33,7 +33,6 @@ class TurnoverGroupsController extends AppController {
 		//$this->set('turnoverGroups', $this->Paginator->paginate());
 
 
-
         $this->set('test', $this->Auth->user());
         $paramUser = array('conditions' => array('User.id' => $this->Auth->user('id')),
         'recursive' => -1);

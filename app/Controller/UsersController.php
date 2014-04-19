@@ -69,7 +69,6 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 
             // Determine the company based on the e-mail address
-
 			$this->User->create();
 
             // Get the company id, based on the e-mail
@@ -80,8 +79,9 @@ class UsersController extends AppController {
             $this->request->data('User.hash', md5(rand(0,1000)));
 
 			if ($this->User->save($this->request->data)) {
-                $msg = 'Your account has been made, <br /> please verify it by clicking the activation link that has been send to your email.';
-				$this->Session->setFlash(__($msg));
+                //$msg = 'Your account has been made, <br /> please verify it by clicking the activation link that has been send to your email.';
+				//$this->Session->setFlash(__($msg));
+                $this->Session->setFlash(__('Account Created. Please log in'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(
@@ -89,16 +89,84 @@ class UsersController extends AppController {
                 );
 			}
 
+
+            /*
             //Ideally, I will be able to have a person choose their company name
             // THEN, upon receiving confirmation e-mail, they will get to choose their Refinery, Business Unit, and Plants.
 
-            $companies = $this->User->Company->find('list');
+
+
             $businessUnits = $this->User->BusinessUnit->find('list');
-            $refineries = $this->User->Refinery->find('list');
             $plants = $this->User->Plant->find('list');
             $this->set(compact('companies', 'businessUnits', 'refineries', 'plants'));
+            */
 		}
-	}
+        // For now, we're only going to be asking for the company and refinery id.
+        // Later, they will need to enter a valid company e-mail and then a representative at the refinery
+        // will validate that they belong.
+
+        $companies = $this->User->Company->find('list');
+        $refineries = $this->User->Refinery->find('list');
+
+        $this->set(compact('companies', 'refineries'));
+
+    }
+
+    public function validate_user($company_id = null, $refinery_id = null, $business_unit_id = null) {
+
+        // Work in progress. I initially wanted this for the user to validate which refinery they belong to
+        // Now, I'm thinking each site will have a designated user who accepts people who want to join.
+        
+        $id = $this->Auth->user('id');
+        $this->User->id = $id;
+
+        if(!$id) {
+            throw new NotFoundException(__('Invalid User'));
+        }
+
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+
+        if($this->request->is('ajax')){
+            $this->autoRender=false;
+
+            if($refinery_id == null) {
+                $options = array(
+                    'conditions' => array(
+                        'Refinery.company_id' => $company_id
+                    ),
+                    'recursive' => -1
+                );
+                $refineries = $this->User->Refinery->find('all', $options);
+                //$this->set(compact('refineries'));
+            }
+            echo json_encode($refineries);
+
+        //Update the database if they are goign through the validation steps
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->User->save($this->request->data)) {
+                debug($this->request->data);
+                $this->Session->setFlash(__('The user has been updated.'));
+                return $this->redirect(array('action' => 'profile'));
+            } else {
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        } else {
+            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+            $this->request->data = $this->User->find('first', $options);
+        }
+
+
+
+        }
+
+        if ($company_id == null) {
+            $companies = $this->User->Company->find('list');
+            $this->set(compact('companies'));
+        }
+    }
+
 
 /**
  * edit method
@@ -108,7 +176,8 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		//$this->User->id = $id;
+
+        $this->User->id = $id;
 
         if(!$id) {
             throw new NotFoundException(__('Invalid User'));
@@ -192,10 +261,12 @@ class UsersController extends AppController {
             throw new notFoundException(__('Invalid user'));
         }*/
 
-        //Gather User Information
-        //$user = $this->User->findById($this->Auth->user('id'));
-        //$this->set('userData', $user);
-        //$this->set('title_for_layout', "USER TITLE");
+
+        // If user is new and still needs to be associated with a refinery, send them to the validation page
+        $user = $this->User->findById($this->Auth->user('id'));
+        if($this->Auth->user('refinery_id') == 0) {
+            $this->redirect(array('action' => 'validate_user'));
+        }
 
 
         // If a user is new, and has "0" for their company, refinery, and plants, we need to go through a welcome process
@@ -210,6 +281,8 @@ class UsersController extends AppController {
             $params = array('conditions' => array('Plant.business_unit_id' =>  $businessUnitInfo['BusinessUnit']['id']));
             $plants = $this->User->Plant->find('list',$params);
             $this->set(compact('plants'));
+
+
             $this->request->data = $user;
 
             //$this->set('content', $variable);

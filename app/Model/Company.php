@@ -11,7 +11,16 @@ App::uses('AppModel', 'Model');
 
 class Company extends AppModel {
 
-    public $hasMany = array('Refinery','User');
+    public $hasMany = array(
+        'Refinery' => array(
+            'className' => 'Refinery',
+            'foreignKey' => 'company_id'
+        ),
+        'User' => array(
+            'className' => 'User',
+            'foreignKey' => 'company_id'
+        )
+    );
 
     public $displayField = 'name';
 

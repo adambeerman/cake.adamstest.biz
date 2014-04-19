@@ -128,7 +128,8 @@ class Turnover extends AppModel {
         $shifts = $days * $num_shifts;
 
         // Compile shift start times into an array called $start
-        $time = date('h:i:s', time());
+        // Capital H for military time
+        $time = date('H:i:s', time());
         for($i=1;$i<=$num_shifts;$i++) {
 
             //Shift Starts
@@ -139,15 +140,13 @@ class Turnover extends AppModel {
 
         // Find index correction based on number of shifts elapsed in the day
         // Subtract 1 if from the night before, progressively add 1, depending on which shift we are in.
-        $idx_correct=-1;
+        $idx_correct=1;
         for($j=1;$j<=$num_shifts;$j++) {
             if($time > $start[$j]){
                 $idx_correct++;
             }
         }
-
         return $shifts+$idx_correct;
-
     }
 
     public function get_num_shifts($turnover_group_id = null) {

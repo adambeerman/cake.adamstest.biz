@@ -56,7 +56,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                         <?php echo $this->Html->link('Logout','/users/logout'); ?>
                     </li>
                     <li>
-                        <?php echo AuthComponent::user('id'); ?>
+                        <span class = "faded"><?php echo AuthComponent::user('id'); ?></span>
                     </li>
                 </ul>
             <?php else: ?>

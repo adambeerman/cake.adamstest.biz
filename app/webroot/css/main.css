@@ -3,6 +3,7 @@
 #content {
     padding: 0;
     background: white;
+    margin-top: 150px;
 }
 .company_logo {
     max-width: 100px;
@@ -26,7 +27,11 @@
     opacity: .75;
     height: 150px;
     color: white;
-    z-index: 3;
+    z-index: -2;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 #header a {
@@ -42,6 +47,7 @@
     position: relative;
     float: left;
     display: inline;
+    z-index: 2;
 
 }
 
@@ -49,6 +55,7 @@
     list-style: none;
     float: left;
     position:relative;
+    padding-left: 10px;
 }
 
 #company_logo {
